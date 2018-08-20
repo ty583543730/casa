@@ -1,0 +1,165 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if empty($object['catId'])}新增{else/}修改{/if}币种</div>
+        <div class="layui-card-body">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">英文简称</label>
+                    <div class="layui-input-block inputs">
+                        <input type="text" name="coin" id="coin" value="{$coin.coin}" {if $coin !='' }disabled{/if}
+                        lay-verify="required" placeholder="请填写英文简称" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                {if $coin.coin == 'CASA' }
+                <div class="layui-form-item">
+                    <label class="layui-form-label">提现手续费</label>
+                    <div class="layui-input-block inputs">
+                        <input type="text" name="zcFee" id="fee" value="{$coin.zcFee}" lay-verify="required"
+                               placeholder="提现手续费" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                {/if}
+                <div class="layui-form-item">
+                    <label class="layui-form-label">中文名</label>
+                    <div class="layui-input-block inputs">
+                        <input type="text" name="title" id="title" value="{$coin.title}" lay-verify="required"
+                               placeholder="请填写中文名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">是否拥有服务器</label>
+                    <div class="layui-input-block inputs">
+                        <input type="radio" name="ownHost" value="1" title="拥有" {if $coin.ownHost !=0}checked{/if}>
+                        <input type="radio" name="ownHost" value="0" title="没有" {if $coin.ownHost== 0}checked{/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">是否有上级货币</label>
+                    <div class="layui-input-block inputs">
+                        <select id="superiorCoin" name="superiorCoin" lay-verify="required" class="layui-input">
+                            <option value="">请选择币种</option>
+                            <option value="NULL">无</option>
+                            <option value="ETH" {if $coin.isCurrency ==2 && $coin.superiorCoin=="ETH"}selected="selected"{/if}>ETH</option>
+                            <option value="BTC" {if $coin.isCurrency ==2 && $coin.superiorCoin=="BTC"}selected="selected"{/if}>BTC</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">转入状态</label>
+                    <div class="layui-input-block inputs">
+                        <input type="radio" name="zrZt" value="1" title="正常转入" {if $coin.zrZt !=0}checked{/if}>
+                        <input type="radio" name="zrZt" value="0" title="禁止转入" {if $coin.zrZt== 0}checked{/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">转出状态</label>
+                    <div class="layui-input-block inputs">
+                        <input type="radio" name="zcZt" value="1" title="正常转出" {if $coin.zcZt !=0}checked{/if}>
+                        <input type="radio" name="zcZt" value="0" title="禁止转出" {if $coin.zcZt== 0}checked{/if}>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">图标</label>
+                    <div class="layui-input-block clearfix">
+                        <div class="code-file-box clearfix" id="cardImg">
+                            <div class="coinImgBox fl">
+                                <img src="{$coin.img}" alt="" width="100">
+                            </div>
+                            <div class="upload-code fl">
+                                <input type="hidden" name="img" id="img" lay-verify="required" value="{$coin.img}">
+                                <span class="layui-btn" id="sendCode">
+                                上传图标
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item" style="border-top:1px solid #DCDCDC;margin-top:20px;">
+                    <div class="layui-input-block" style="margin-top:20px;">
+                        <input type="hidden" name="id" id="id" value="{$coin.id}">
+                        <button class="layui-btn" lay-submit lay-filter="coinForm" id="submitCoin">提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use(['upload', 'form', 'layer'], function () {
+        var upload = layui.upload, form = layui.form, layer = layui.layer;
+
+        var uploadInst = upload.render({
+            elem: '#sendCode', //绑定元素
+            accept: {
+                extensions: 'gif,jpg,jpeg,png',
+                mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif'
+            },
+            auto:false,
+            data: {dir: 'coin'},
+            url: '/admin/index/uploadPic', //上传接口
+            choose:function(obj){
+                var flag = true;
+                obj.preview(function(index, file, result){
+                    if(file.size < 5*1024*1024){
+                        obj.upload(index, file);
+                    }else{
+                        flag = false;
+                        layer.msg("您上传的图片大小不能超过5M！", {
+                            icon: 5,
+                            time: 2000
+                        });
+                        uploadInst.config.elem.next()[0].value = '';
+                        return false;
+                    }
+                    return flag;
+                });
+            },
+            before: function(obj){ //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                layer.load(1,{shade: [0.3, '#000000']}); //上传loading
+            },
+            done: function (json){
+                var html = '<img width="100" height="100" src="' + json.data.src + '"/>';
+                $(".coinImgBox").html(html);
+                $("#img").val(json.data.src);
+                layer.closeAll('loading'); //关闭loading
+            },
+            error: function () {
+                //请求异常回调
+                layer.closeAll('loading'); //关闭loading
+            }
+        });
+        //新增、编辑用户钱包地址
+        form.on('submit(coinForm)', function (data) {
+            $('#submitCoin').attr('disabled', true);
+            var param = data.field;
+            var loading = SK.msg('正在提交处理中，请稍后...', {
+                time: 600000
+            });
+            $.post(SK.U('admin/coin/addCoin'), param, function (data) {
+                var json = SK.toJson(data);
+                if (json.status == 1) {
+                    layer.msg(json.msg, {
+                        icon: 1,
+                        time: 2000,
+                        end: function () {
+                            location.reload();
+                        }
+                    });
+                } else {
+                    layer.msg(json.msg, {
+                        icon: 5,
+                        time: 3000
+                    });
+                    $('#submitCoin').attr('disabled', false);
+                }
+                layer.close(loading);
+            });
+        });
+    });
+</script>
+{/block}

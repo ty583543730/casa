@@ -1,0 +1,112 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-row div {
+        line-height: 35px;
+        height: 35px;
+        border-bottom: #cccccc 1px dashed;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">流水详情</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    用户手机号：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.userPhone}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    用户名：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.userName}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    订单号：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.orderNo}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    业务类型：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.type}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作前可用币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.preCoin}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作前冻结币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.preCoinFrozen}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作前锁定币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.preCoinLock}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作可用币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.coinBlack}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作冻结币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.coinFrozen}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作锁定币：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.coinLock}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    操作备注：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.remark}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs3">
+                    创建时间：
+                </div>
+                <div class="layui-col-xs9">
+                    {$info.createTime}
+                </div>
+            </div>
+    </div>
+</div>
+{/block}

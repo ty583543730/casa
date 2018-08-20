@@ -1,0 +1,239 @@
+.layui-timeline {
+	margin-left: 150px;
+}
+.layui-timeline-title {
+	position: absolute;
+    left: -145px;
+    top: 2px;
+}
+.layui-flow-more {
+	margin-left: -145px;
+}
+.list-table {
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+.list-table .title {
+	display: inline-block;
+	padding: 0 10px;
+	height:32px;
+	line-height: 30px;
+	font-size:18px;
+	color:#0090CF;
+	background:#fff;
+	border-radius:15px;
+	text-align: center;
+	border: 1px solid #0090CF;
+}
+.list-table .cont {
+	margin-top: 40px;
+	padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+.navbar-nav > li {
+    float: left;
+    margin-left:20px;
+  }
+ .navbar-nav > li > a {
+    font-size: 16px;
+    color: #fff;
+  }
+ .layui-timeline-axis {
+ 	color: #0090CF !important;
+ }
+legend {
+	width: auto;
+	border-bottom:none;
+}
+.layui-elem-field legend {
+	font-size: 18px;
+}
+.layui-text h3 {
+	font-size: 16px;
+}
+/** 详情 **/
+.list-table .ad_cont img {
+	margin: 20px 0;
+	max-width:  100%;
+}
+.list-table .ad_title {
+	line-height: 30px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.list-table .ad_title a {
+	font-size: 16px;
+}
+.list-table .ad_cont {
+	padding: 24px 0;
+	color: #666;
+	line-height: 24px;
+}
+.list-table .ad_cont p {
+	margin-bottom: 0 !important;
+	text-indent: 2em;
+	text-align: left !important;
+}
+.list-table .ad_cont h5 {
+	padding-bottom: 10px;
+}
+@-webkit-keyframes ripple-animation {
+	from {
+		opacity: 0.2;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(100);
+		transform: scale(100);
+	}
+}
+
+@keyframes ripple-animation {
+	from {
+		opacity: 0.2;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: scale(100);
+		transform: scale(100);
+	}
+}
+.services {
+	text-align: center;
+}
+.services .col-md-3{
+	margin: 40px 0;
+}
+.services .service h5 {
+	font-size: 14px;
+	padding-bottom: 15px;
+}
+/*.services .service {
+	border-left: 1px solid #ccc;
+}*/
+.service {
+	margin-bottom: 30px;
+}
+.service .icon-holder {
+	height: 80px;
+}
+.gray-bg {
+	background-color: #f7f8fa;
+}
+.teams {
+	padding-top: 50px;	
+}
+.team {
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+
+.team .avatar {
+	position: relative;
+	z-index: 2;
+	margin-top: -60px;
+	border-radius: 50%;
+}
+
+.team .title {
+	margin: 50px 0;
+}
+.team h5 {
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+.download-app {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.download-app .title {
+	font-size: 16px;
+	margin-left:150px;
+	margin-right: 150px;
+}
+/** 公告  **/
+.advertise {
+	z-index: 9;
+	height:50px;
+	line-height: 50px;
+	background:rgba(255,255,255,1);
+	box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.05);
+	overflow: hidden;
+}
+.advertise ul li {
+	list-style: none;
+}
+.owl-item img {
+	min-height: 456px;
+}
+/* Media Queries */
+
+@media(max-width:991px) {
+	.layui-timeline-title {
+		position: absolute;
+	    left: -145px;
+	}
+	.layui-flow-more {
+		margin-left: -145px;
+	}
+	.layui-timeline {
+		margin-left: 140px;
+	}
+}
+
+@media(max-width: 768px) {
+	.layui-timeline-title {
+		position: absolute;
+	    left: -135px;
+	}
+	.layui-flow-more {
+		margin-left: -135px;
+	}
+	.layui-timeline {
+		margin-left: 130px;
+	}
+	.list-table .title {
+		font-size: 16px;
+	}
+}
+
+@media(max-width: 400px) {
+	h6 {
+		font-size: 12px;
+	}
+	.layui-timeline-title {
+		position: absolute;
+	    left: -145px;
+	}
+	.layui-flow-more {
+		margin-left: -145px;
+	}
+	.layui-timeline {
+		margin-left: 145px;
+	}
+	.v-ellipsis-3 {
+		font-size: 12px;
+	}
+	.list-table .title {
+		font-size: 14px;
+	}
+	.list-table .cont {
+		margin-top: 30px;
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-top: 0;
+	    padding-bottom: 0;
+	    border: none;
+	    box-shadow: none;
+	}
+}

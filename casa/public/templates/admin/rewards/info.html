@@ -1,0 +1,86 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-row div {
+        line-height: 35px;
+        height: 35px;
+        border-bottom: #cccccc 1px dashed;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">奖励详情</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    订单编号：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.orderNo}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    类型：
+                </div>
+                <div class="layui-col-xs8">
+                    {switch name="info.type"}
+                    {case value="1"}交易奖励{/case}
+                    {case value="2"}团队业绩{/case}
+                    {case value="3"}新增业绩{/case}
+                    {case value="4"}定期复投{/case}
+                    {/switch}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    订单数量：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.total}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    奖励数量：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.num}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    奖励可用积分：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.score}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    奖励绑定积分：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.binding}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    奖励锁仓币：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.locker}
+                </div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">
+                    时间：
+                </div>
+                <div class="layui-col-xs8">
+                    {$info.createTime}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

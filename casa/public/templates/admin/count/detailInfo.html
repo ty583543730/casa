@@ -1,0 +1,61 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-row div {
+        line-height: 32px;
+        height: 32px;
+        border-bottom: #cccccc 1px dashed;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">用户对账详情</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs4">对账日期：</div>
+                <div class="layui-col-xs8">{$data.date}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">币种：</div>
+                <div class="layui-col-xs8">{$data.coin}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用币数量：</div>
+                <div class="layui-col-xs8">{$data.block}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁定币数量：</div>
+                <div class="layui-col-xs8">{$data.lock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">冻结币数量：</div>
+                <div class="layui-col-xs8">{$data.forzen}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用对账差异：</div>
+                <div class="layui-col-xs8">{$data.blockDiff}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓对账差异：</div>
+                <div class="layui-col-xs8">{$data.lockDiff}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">冻结对账差异：</div>
+                <div class="layui-col-xs8">{$data.forzenDiff}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用变化数量：</div>
+                <div class="layui-col-xs8">{$data.blockChange}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓变化数量：</div>
+                <div class="layui-col-xs8">{$data.lockChange}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">冻结变化数量：</div>
+                <div class="layui-col-xs8">{$data.forzenChange}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

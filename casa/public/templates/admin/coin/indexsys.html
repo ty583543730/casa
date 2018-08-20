@@ -1,0 +1,23 @@
+{extend name="base/base" /}
+{block name="css"}
+<style>
+    body {
+        background-color: #fff;
+    }
+
+</style>
+{/block}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="content" style="min-width:1000px;">
+        <table id="coinTable" lay-filter="coinTable"></table>
+        <!--<script type="text/html" id="toolBar">-->
+            <!--<span class="layui-btn layui-btn-xs" lay-event="in">转入</span>-->
+            <!--<span class="layui-btn layui-btn-xs" lay-event="out">转出</span>-->
+        <!--</script>-->
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script src="__VIEWPATH__/coin/indexsys.js"></script>
+{/block}

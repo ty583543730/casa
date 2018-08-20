@@ -1,0 +1,134 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-form-label {
+        width: 100px;
+    }
+    .layui-input-block {
+        margin-left: 130px;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if empty($object['id'])}新增{else/}修改{/if}邮件配置</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP服务器</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailSmtp" id="mailSmtp" value="{$object.mailSmtp}"
+                                       lay-verify="required" placeholder="请填写SMTP服务器" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP端口</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailPort" id="mailPort" value="{$object.mailPort}"
+                                       lay-verify="required" placeholder="请填写SMTP端口" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">是否验证SMTP</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailAuth" id="mailAuth" value="{$object.mailAuth}"
+                                       lay-verify="required" placeholder="请填写是否验证SMTP" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP发件人邮箱</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailAddress" id="mailAddress" value="{$object.mailAddress}"
+                                       lay-verify="required" placeholder="请填写SMTP发件人邮箱" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP登录账号</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailUserName" id="mailUserName" value="{$object.mailUserName}"
+                                       lay-verify="required" placeholder="请填写SMTP登录账号" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">SMTP登录密码</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailPassword" id="mailPassword" value="{$object.mailPassword}"
+                                       lay-verify="required" placeholder="请填写SMTP登录密码" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人标题</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="mailSendTitle" id="mailSendTitle"
+                                       value="{$object.mailSendTitle}"
+                                       lay-verify="required" placeholder="请填写发件人标题" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">今天可使用次数</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="useTime" id="useTime" value="{$object.useTime}"
+                                       lay-verify="required" placeholder="请填写今天可使用次数" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="id" id="id"
+                                       value="{if (isset($object.id))}{$object.id}{/if}"/>
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use(['form', 'layer'], function () {
+        var form = layui.form, layer = layui.layer;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            var mask = layer.load(1, {shade: [0.8, '#393D49']});
+            $.post(SK.U('admin/emailconfigs/' + ((data.field.id > 0) ? "edit" : "add")), data.field, function (res) {
+                layer.close(mask);
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    setTimeout('parent.location.reload();', 2000);
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>
+{/block}

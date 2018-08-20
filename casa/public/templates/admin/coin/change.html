@@ -1,0 +1,87 @@
+{extend name="base/base" /}
+{block name="css"}
+<style>
+    html,body {
+        background-color: #fff;
+    }
+    .account-head{
+        height:45px;
+        line-height:45px;
+    }
+    .account-head h3{
+        border-left:5px solid #009688;
+        padding-left:15px;
+    }
+    .form-section{
+        padding:25px 0;
+    }
+    .form-section  .layui-form-label{
+        width:100px;
+    }
+    .form-section  .layui-input-block {
+        margin-left: 130px;
+    }
+    .form-section .inputs{
+        width:400px;
+    }
+</style>
+{/block}
+{block name="body"}
+<div class="layui-fluid" style="margin:0 20px;">
+    <div class="account-head">
+        <h3 class="SK-f333">系统钱包{if $status == 1}转入{else}转出{/if}</h3>
+    </div>
+    <div class="form-section">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label class="layui-form-label">币种</label>
+                <div class="layui-input-block inputs" >
+                    <span>{$sysBank.coin}</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">货币地址</label>
+                <div class="layui-input-block inputs" >
+                    <span>{$sysBank.addr}</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">账户名(BTC专用)</label>
+                <div class="layui-input-block inputs" >
+                    <span>{$sysBank.name}</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">可用余额</label>
+                <div class="layui-input-block inputs" >
+                    <span>{$sysBank.black}</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">累计金额</label>
+                <div class="layui-input-block inputs" >
+                    <span>{$sysBank.total}</span>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">余额{if $status == 1}转入{else}转出{/if}</label>
+                <div class="layui-input-block inputs" >
+                    <input type="text" name="black"  id="black" value="" lay-verify="required" placeholder="0" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+
+            <div class="layui-form-item" style="border-top:1px solid #DCDCDC;margin-top:20px;">
+                <div class="layui-input-block" style="margin-top:20px;">
+                    <input type="hidden" name="id"  id="id" value="{$sysBank.id}">
+                    <input type="hidden" name="status"  id="status" value="{$status}">
+                    <button class="layui-btn" lay-submit lay-filter="coinForm" id="submitCoin">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script src="__VIEWPATH__/coin/indexsys.js"></script>
+{/block}

@@ -1,0 +1,76 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if condition="isset($info['positionId'])"}广告位修改{else}广告位新增{/if}</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告位名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="positionName" id="positionName" required lay-verify="required" placeholder="广告位名称" value="{$info.positionName}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告代码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="positionCode" id="positionCode" required lay-verify="required" placeholder="广告代码" value="{$info.positionCode}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">建议宽度</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="positionWidth" id="positionWidth" required lay-verify="required" placeholder="建议宽度" value="{$info.positionWidth}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">建议高度</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="positionHeight" id="positionHeight" placeholder="建议高度" value="{$info.positionHeight}" required lay-verify="required" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="positionId" id="positionId" value="{$info.positionId}"
+                                       class="layui-input">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            $.post(SK.U('admin/Adpositions/' + ((data.field.positionId > 0) ? "edit" : "add")), data.field, function (res) {
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    setTimeout('parent.location.reload();', 2000);
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>
+
+{/block}

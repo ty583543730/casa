@@ -1,0 +1,343 @@
+@CHARSET "utf-8";
+html {
+	height: 100%;
+}
+body {
+	background-color: #fff;
+	color: #333333;
+	font-size: 14px;
+	padding: 0;
+	max-width: 414px;
+	height: 100%;
+	margin: 0 auto;
+}
+input,textarea {      
+     -webkit-user-select:auto; /*webkit浏览器*/     
+}  
+ul,
+li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+em,
+i {
+	font-style: normal;
+}
+a,img {
+	-webkit-touch-callout: none;
+}
+a,input,select,textarea,button,optgroup {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a,
+textarea:focus,
+input:focus,
+select:focus {
+	outline: none;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+	color:#999 !important; 
+}
+.layui-input {
+	height: 3.9rem !important;
+}
+.layui-form-select dl dd.layui-this {
+	background-color: #eee;
+    color: #666;
+}
+.prism-player {
+	height: 100% !important;
+}
+.prism-player .prism-controlbar {
+	position: fixed !important;
+}
+.moblie-bar-nav {
+	max-width: 414px;
+	margin: 0 auto;
+}
+/*** flex ***/
+
+.flex-horizontal {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-flex-flow: row nowrap;
+	/*新版本语法 Chrome 21+ */
+	-webkit-align-items: center;
+	/*老版本语法  Safari,  iOS, Android browser, older WebKit browsers. */
+	-webkit-box-align: center;
+	-webkit-align-content: center;
+}
+.flex {
+	position: relative;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.flex-1 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex: 1;
+	display: block;
+}
+
+/*** float ***/
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+
+/*** align ***/
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+/*** color ***/
+.color-blue{
+	color: #5187DF;
+}
+/* checkbox start */
+.ui-checkbox {
+	display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.ui-checkbox input {
+	display: none !important;
+	border: none;
+    background-color: transparent;
+}
+.ui-checkbox input[checked] + label {
+    background: url(../../images/home/moblie/icon_select.png) no-repeat;
+}
+.ui-checkbox label {
+	  background: url(../../images/home/moblie/icon_unselect.png) no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+/*** 头部 ***/
+.moblie-bar {
+	position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 49px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-bottom: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-bottom: 1px solid #DDDDDD;
+	background-color: #fff;
+}
+.moblie-bar .moblie-title {
+	right: 40px;
+    left: 40px;
+    display: inline-block;
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    text-overflow: ellipsis;
+	font-size: 16px;
+    font-weight: 500;
+    line-height: 49px;
+    position: absolute;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: #333;
+}
+.moblie-bar .moblie-action-back {
+	margin-right: -10px;
+    margin-left: -10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.moblie-bar .icon-back {
+	width: 9px;
+	height: 20px;
+	margin-top: 15px;
+	vertical-align: middle;
+	display: inline-block;
+	background: url('../../images/home/moblie/back_gray.png');
+	background-size: cover;
+}
+.moblie-logo {
+	padding-top: 4rem;
+}
+.moblie-logo img {
+	width:9.19rem;
+}
+.moblie-form-reg {
+	padding: 2rem;
+}
+.moblie-input-group {
+    position: relative;
+    padding: 0;
+    border: 0;
+    background-color: #fff;
+}
+.moblie-input-group .moblie-input-row {
+   padding: 0px 10px;
+   height: 4rem;
+   line-height: 4rem;
+   border-bottom: 1px solid #CCCCCC;
+}
+.moblie-input-group label {
+    height: 4rem;
+    padding-right: 10px;
+    line-height: 4rem;
+    font-size: 14px;
+    color: #010101;
+}
+.moblie-input-group .splite {
+	color: #CCCCCC;
+	padding-right: 10px;
+}
+.moblie-input-row label {
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+    float: left;
+}
+.moblie-input-row input, .moblie-input-row select, .moblie-input-row textarea {
+    background: 0 0;
+    float: right;
+    margin-bottom: 0;
+    padding-left: 0;
+    border: 0;
+    font-size: 14px;
+}
+.moblie-input-row label~input {
+	height: 4rem;
+	line-height: 4rem;
+}
+.moblie-input-row .verfity {
+	width: 7rem;
+	height: 3rem;
+	margin-top: .5rem;
+	margin-right: -10px;
+}
+.btn-sm-blue {
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	padding: 0 10px;
+	height:2.5rem;
+	margin-top: .7rem;
+	margin-right: -10px;
+	line-height: 2.5rem;
+	text-decoration: none;
+	background:rgba(81,135,223,1);
+	border-radius:.4rem;
+}
+.moblie-input-row .agrent {
+	color: #5187DF;
+}
+.btn-lg-blue {
+	width: 100%;
+	display: inline-block;
+	height: 3.4rem;
+	line-height: 3.4rem;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background:rgba(81,135,223,1);
+	border-radius:.5rem;
+	border: none;
+}
+.checkbox {
+	margin-top: 15px;
+}
+.checkbox a{
+	text-decoration: none;
+}
+.down-load {
+	position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+}
+.down-load img {
+	margin-left: 15px;
+	height: 28px;
+	vertical-align: middle;
+}
+.down-load .btn-sm-blue {
+	display: block;
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	padding: 0 10px;
+	height:30px;
+	margin-top: 10px;
+	margin-right: 15px;
+	line-height: 30px;
+	text-decoration: none;
+	background:rgba(81,135,223,1);
+	border-radius:5px;
+}
+.protocol {
+	position: relative;
+	top: 50px;
+	padding: 20px 15px;
+	font-size: 14px;
+}
+/* 注册成功页面 */
+ .download_main h3{
+ 	 margin-top: 0;
+     font-size:20px;
+     color: #444444;
+     font-weight: normal;
+     text-align:center;
+ }
+ .download_main .tips_img{
+ 	position:relative;
+ 	padding-top: 40px;
+ }
+ .download_main .tips_img img{
+ 	max-width:100%;
+ 	max-height:100%;
+ }
+ .download_main .desc{
+ 	margin-top:-0.6rem;
+ }
+ .download{
+ 	-webkit-box-sizing:border-box;
+ 	box-sizing:border-box;
+ 	position:relative;
+ 	background:#fff;
+ }
+ .download .downloadBtn{
+ 	width:10rem;
+	height: 3rem;
+    line-height: 3rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(81,135,223,1);
+    border-radius: .3rem;
+    border: none;
+ }

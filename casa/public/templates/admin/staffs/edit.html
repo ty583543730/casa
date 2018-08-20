@@ -1,0 +1,112 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if condition="isset($info['staffId'])"}职工修改{else}职工新增{/if}</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">职工编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="staffNo" id="staffNo" required
+                                       lay-verify="required" placeholder="职工编号" value="{$info.staffNo}"
+                                       autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">职工名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="staffName" id="staffName" required
+                                       lay-verify="required" placeholder="职工名称" value="{$info.staffName}"
+                                       autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录账号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="loginName" id="loginName" required
+                                       lay-verify="required" placeholder="登录账号" value="{$info.loginName}"
+                                       autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录密码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="loginPwd" id="loginPwd" placeholder="登录密码 修改时不填不修改" value=""
+                                       autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户角色</label>
+                            <div class="layui-input-block">
+                                <select id='staffRoleId' name='staffRoleId'>
+                                    {volist name="roles" id="vo"}
+                                    <option value="{$vo['roleId']}" {if
+                                            condition="$info['staffRoleId'] == $vo['roleId']" }selected{
+                                    /if}>{$vo.roleName}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">是否在职</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="workStatus" value="1" title="在职" {if
+                                       condition="$info['workStatus'] eq 1" }checked{/if}>
+                                <input type="radio" name="workStatus" value="0" title="离职" {if
+                                       condition="$info['workStatus'] eq 0" }checked{/if}>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="staffId" id="staffId" value="{$info.staffId}"
+                                       class="layui-input">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            $.post(SK.U('admin/staffs/' + ((data.field.staffId > 0) ? "edit" : "add")), data.field, function (res) {
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    setTimeout('parent.location.reload();', 2000);
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>
+
+{/block}

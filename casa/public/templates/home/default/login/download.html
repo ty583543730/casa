@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>用户APP下载</title>
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/home/moblie.css">
+</head>
+<body>
+	<div class="download_main container">
+		<div class="text-center">
+		    <div class="tips_img">
+				<img src="__STATIC__/images/home/moblie/app.png">
+			</div>
+			<div class="desc">
+				<h3>{:lang("download wallets")}</h3>
+				<div class="download">
+					<a href="javascript:;" class="downloadBtn">{:lang("download now")}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="__STATIC__/js/home/zepto.min.js"></script>
+	<script src="__STATIC__/js/home/download.js"></script>
+	<script>
+        var h = "";
+        h+=document.documentElement.clientHeight+'px';
+        $('body').height(h);
+        $('body').on('touchend', '.downloadBtn',function(e) {
+            var $eleForm = $("<form method='get'></form>");
+            $eleForm.attr("action","{$download}");
+            $(document.body).append($eleForm);
+            //实现下载
+            $eleForm.submit();
+        })
+	</script>
+</body>
+</html>

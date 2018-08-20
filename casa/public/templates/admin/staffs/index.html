@@ -1,0 +1,75 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header"><span>职工管理</span>
+            <button class="layui-btn  layui-btn-sm" onclick="edit(0)" style="float: right;margin-top: 8px;">
+                新增职工
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-hide" id="staffsTable"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" onclick="edit({{d.staffId}})">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({{d.staffId}},'{{d.staffName}}')">删除</a>
+</script>
+<script>
+    layui.use(['tree', 'layer', 'table'], function () {
+        var layer = layui.layer, table = layui.table;
+        table.render({
+            elem: '#staffsTable',
+            limit: 20,
+            limits: [20, 40, 60, 80, 100, 120],
+            url: SK.U('admin/staffs/pageQuery'),
+            cellMinWidth: 80,
+            page: true,
+            cols: [[
+                {field: 'staffId', width: 40, title: 'ID', sort: true},
+                {field: 'staffNo', title: '职工编号'},
+                {field: 'staffName', title: '职工名称'},
+                {field: 'loginName', title: '登录账号'},
+                {field: 'roleName', title: '角色'},
+                {
+                    field: 'workStatus', title: '是否在职', align: 'center', templet: function (d) {
+                        if (d.workStatus == 1) {
+                            return '在职';
+                        } else {
+                            return '离职';
+                        }
+                    }
+                },
+                {fixed: 'right', width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+    });
+
+    /*编辑页面*/
+    function edit(id) {
+        var url = '';
+        if (id == 0) {
+            url = SK.U('admin/staffs/toedit');
+        } else {
+            url = SK.U('admin/staffs/toedit', 'id=' + id);
+        }
+        //location.href=url;
+        SK.popupRight('LAY_PopupStaffs', url, '600px');
+    }
+
+    /*删除页面*/
+    function del(id, name) {
+        layer.confirm('您确认删除 ' + name + ' 职工吗？', {title: '删除职工'}, function (index) {
+            $.post(SK.U('admin/staffs/del'), {id: id}, function (data) {
+                layer.msg(data.msg);
+                if (data.status == 1) {
+                    setTimeout('location.reload();', 2000);
+                }
+            })
+        });
+    }
+</script>
+{/block}

@@ -1,0 +1,38 @@
+<!-- 侧边菜单 -->
+<div class="layui-side layui-side-menu">
+    <div class="layui-side-scroll">
+        <div class="layui-logo" lay-href="home/console.html">
+            <span>{:SysConfig("websiteName")}</span>
+        </div>
+
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
+            lay-filter="layadmin-system-side-menu">
+            {volist name="menus" id="menu"} <!--第一层目录 基础功能-->
+            <li data-name="{$menu.menuId}" class="layui-nav-item">
+                <a href="javascript:;" lay-tips="{$menu.menuName}" lay-direction="2">
+                    <i class="layui-icon layui-icon-{$menu.alias}"></i>
+                    <cite>{$menu.menuName}</cite>
+                </a>
+                {if condition="isset($menu['sub'])"}
+                    <dl class="layui-nav-child">
+                        {volist name="menu.sub" id="submenu"} <!--第二层目录 权限管理 系统日志等-->
+                            <dd data-name="{$submenu.menuId}">
+                                {if condition="isset($submenu['sub'])"}
+                                    <a href="javascript:;">{$submenu.menuName}</a>
+                                    <dl class="layui-nav-child">
+                                        {volist name="submenu.sub" id="bottom"}
+                                        <dd data-name="{$bottom.menuId}"><a lay-href="/{$bottom.privilegeUrl}">{$bottom.menuName}</a></dd>
+                                        {/volist}
+                                    </dl>
+                                {else}
+                                    <a lay-href="/{$submenu.privilegeUrl}">{$submenu.menuName}</a>
+                                {/if}
+                            </dd>
+                        {/volist}
+                    </dl>
+                {/if}
+            </li>
+            {/volist}
+        </ul>
+    </div>
+</div>

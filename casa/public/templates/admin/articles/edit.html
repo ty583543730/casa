@@ -1,0 +1,191 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if empty($object['articleId'])}新增{else/}修改{/if}文章</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文章标题</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="articleTitle" id="articleTitle" value="{$object.articleTitle}"
+                                       lay-verify="required" placeholder="请填写文章标题" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">英文标题</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="articleTitleEn" id="articleTitleEn"
+                                       value="{$object.articleTitleEn}"
+                                       lay-verify="required" placeholder="请填写文章标题" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文章分类</label>
+                            <div class="layui-input-block inputs">
+                                <select name="catId" id="catId" lay-verify="required" lay-filter="">
+                                    <option value="">请选择文章分类</option>
+                                    {volist name="articlecatList" id="vo"}
+                                    <option value="{$vo.catId}" {if condition="$object['catId'] == $vo['catId']"}selected{/if}>{$vo.catName}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" id="accountLabel">是否显示</label>
+                            <div class="layui-input-block inputs">
+                                <input type="radio" name="isShow" value="1" title="显示" lay-filter="money" checked>
+                                <input type="radio" name="isShow" value="0" title="隐藏" lay-filter="money">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">关键字</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="articleKey" id="articleKey" value="{$object.articleKey}"
+                                       lay-verify="required" placeholder="请填写文章关键字" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文章logo</label>
+                            <div class="layui-input-block inputs">
+                                <div class="code-file-box clearfix">
+                                    <div class="fl">
+                                        <img {notempty name="object.logo" }src="{$object['logo']}" {/notempty}
+                                        id="imgSrc" width="100">
+                                    </div>
+                                    <div class="upload-code fl" style="margin-top:-27px;">
+                                        <input type="hidden" name="logo" id="logo" value="{$object['logo']}">
+                                        <span class="layui-btn layui-btn-sm uploadImg">上传文章Logo</span>
+                                        <div>建议宽度：<span>300</span>px，高度:<span>300</span>px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">文章内容</label>
+                            <div class="layui-input-block">
+                                <textarea id="articleContent" name="articleContent" style="display: none;">{$object.articleContent}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md12">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">英文内容</label>
+                            <div class="layui-input-block">
+                                <textarea id="articleContentEn" name="articleContentEn" style="display: none;">{$object.articleContentEn}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="id" id="id"
+                                       value="{if (isset($object.articleId))}{$object.articleId}{/if}"/>
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer_js"}
+<script>
+    layui.use(['form', 'layer', 'layedit','upload'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            upload = layui.upload,
+            layedit = layui.layedit;
+        layedit.set({
+            height: 480, //设置编辑器高度
+            uploadImage: {
+                url: '/admin/index/uploadPic' //接口url
+                , type: 'post' //默认post
+            }
+        });
+        var articleContent = layedit.build('articleContent'); //建立编辑器
+        var articleContentEn = layedit.build('articleContentEn'); //建立编辑器
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            data.field.articleContent = layedit.getContent(articleContent);
+            data.field.articleContentEn = layedit.getContent(articleContentEn);
+            //console.log(data.field); //当前容器的全部表单字段，名值对形式：{name: value}
+            var mask = layer.load(1, {shade: [0.8, '#393D49']});
+            $.post(SK.U('admin/articles/' + ((data.field.id > 0) ? "edit" : "add")), data.field, function (res) {
+                layer.close(mask);
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    window.location.href = SK.U('admin/articles/index');
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        //上传图片
+        var uploadInst = upload.render({
+            elem: '.uploadImg', //绑定元素
+            url: '/admin/index/uploadPic', //上传接口
+            accept: {
+                extensions: 'gif,jpg,jpeg,png',
+                mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif'
+            },
+            auto:false,
+            data: {dir: 'ads'},
+            choose:function(obj){
+                var flag = true;
+                obj.preview(function(index, file, result){
+                    if(file.size < 5*1024*1024){
+                        obj.upload(index, file);
+                    }else{
+                        flag = false;
+                        layer.msg("您上传的图片大小不能超过5M！", {
+                            icon: 5,
+                            time: 2000
+                        });
+                        uploadInst.config.elem.next()[0].value = '';
+                        return false;
+                    }
+                    return flag;
+                });
+            },
+            before: function(obj){ //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                layer.load(1,{shade: [0.3, '#000000']}); //上传loading
+            },
+            done: function (json, index, upload) {
+                layer.closeAll('loading'); //关闭loading
+                layer.msg(json.msg);
+                if (json.code == 0) {
+                    $("#imgSrc").attr('src', json.data.src);
+                    $("#logo").val(json.data.src);
+                }
+            },
+            error: function () {
+                //请求异常回调
+                layer.closeAll('loading'); //关闭loading
+            }
+        });
+    });
+</script>
+{/block}

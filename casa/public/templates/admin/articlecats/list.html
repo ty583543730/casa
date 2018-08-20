@@ -1,0 +1,80 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header"><span>文章分类</span>
+            <button class="layui-btn  layui-btn-sm" onclick="edit(0);" style="float: right;margin-top: 8px;">
+                新增文章分类
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-hide" id="catTable"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script type="text/html" id="toolBar">
+    <span class="layui-btn layui-btn-xs" onclick="edit({{d.catId}});">修改</span>
+    <span class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({{d.catId}},'{{d.catName}}');">删除</span>
+</script>
+<script>
+    layui.use(['form', 'layer', 'table'], function () {
+        var layer = layui.layer, table = layui.table, form = layui.form;
+        //渲染数据表格
+        table.render({
+            elem: '#catTable',
+            url: SK.U('admin/articlecats/pageQuery'),
+            limit: 20,
+            limits: [20, 40, 60, 80, 100, 120],
+            loading: true,
+            page: true,
+            text: {
+                none: '暂无相关数据'
+            },
+            cols: [[ //标题栏
+                {field: 'catId', title: 'ID', align: 'center'},
+                {field: 'catName', title: '分类名称', align: 'center'},
+                {field: 'catNameEn', title: '英文名称', align: 'center'},
+                {field: 'parentName', title: '上一级分类', align: 'center'},
+                {
+                    field: 'isShow', title: '是否显示', align: 'center', templet: function (d) {
+                        if (d.isShow == 1) {
+                            return '<span>显示 </span>';
+                        } else {
+                            return '<span>隐藏</span>';
+                        }
+                    }
+                },
+                {field: 'catSort', title: '排序', align: 'center'},
+                {field: 'createTime', title: '创建时间', align: 'center'},
+                {fixed: 'right', title: '操作', align: 'center', toolbar: '#toolBar'}
+            ]],
+        });
+    });
+
+    /*编辑页面*/
+    function edit(id) {
+        var url = '';
+        if (id == 0) {
+            url = SK.U('admin/articlecats/toedit');
+        } else {
+            url = SK.U('admin/articlecats/toedit', 'id=' + id);
+        }
+        //location.href=url;
+        SK.popupRight('LAY_PopupRoles', url, '600px');
+    }
+
+    /*删除页面*/
+    function del(id, name) {
+        layer.confirm('您确认删除 ' + name + ' 分类吗？', {title: '删除分类'}, function (index) {
+            $.post(SK.U('admin/articlecats/del'), {id: id}, function (data) {
+                layer.msg(data.msg);
+                if (data.status == 1) {
+                    setTimeout('location.reload();', 2000);
+                }
+            })
+        });
+    }
+</script>
+{/block}

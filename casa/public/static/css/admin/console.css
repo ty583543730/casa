@@ -1,0 +1,49 @@
+.layui-elem-field legend {
+	font-size: 16px;
+}
+.panel {
+	min-width: 265px;
+	display: inline-block;
+    text-align: center;
+    height: 90px;
+    margin-bottom: 10px;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #fff;
+}
+.panel_box a {
+    display: block;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 80px;
+    background-color: #f2f2f2 !important;
+}
+.panel_icon {
+    width: 45%;
+    display: inline-block;
+    line-height: 85px;
+    float: left;
+    position: relative;
+    height: 100%;
+    text-align: left;
+    font-size: 24px;
+    color: #01AAED !important;
+}
+.panel_icon i {
+    font-size: 40px !important;
+    color: #fff;
+    display: inline-block;
+}
+.panel_word {
+    width: 55%;
+    display: inline-block;
+    float: left;
+    line-height: 60px;
+    margin: 13px 0 14px;
+}
+.panel_word span {
+    font-size: 25px;
+    display: block;
+    height: 34px;
+}

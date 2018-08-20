@@ -1,0 +1,85 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-row div {
+        line-height: 32px;
+        height: 32px;
+        border-bottom: #cccccc 1px dashed;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">订单统计详情</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <div class="layui-col-xs4">日期：</div>
+                <div class="layui-col-xs8">{$data.date}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">转账订单数量：</div>
+                <div class="layui-col-xs8">{$data.transferNum}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">转账数字币数量：</div>
+                <div class="layui-col-xs8">{$data.transferCoin}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">转账总订单数量：</div>
+                <div class="layui-col-xs8">{$data.transferNumTotal}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">转账总数字币数量：</div>
+                <div class="layui-col-xs8">{$data.transferCoinTotal}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">收款订单数量：</div>
+                <div class="layui-col-xs8">{$data.paymentNum}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">收款数字币数量：</div>
+                <div class="layui-col-xs8">{$data.paymentCoin}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">收款总订单数量：</div>
+                <div class="layui-col-xs8">{$data.paymentNumTotal}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">收款总数字币数量：</div>
+                <div class="layui-col-xs8">{$data.paymentCoinTotal}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用币转账订单数量：</div>
+                <div class="layui-col-xs8">{$data.transferNumLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用币转账数字币数量：</div>
+                <div class="layui-col-xs8">{$data.transferCoinLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用币转账总订单数量：</div>
+                <div class="layui-col-xs8">{$data.transferNumTotalLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">可用币转账总数字币数量：</div>
+                <div class="layui-col-xs8">{$data.transferCoinTotalLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓币收款订单数量：</div>
+                <div class="layui-col-xs8">{$data.paymentNumLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓币收款数字币数量：</div>
+                <div class="layui-col-xs8">{$data.paymentCoinLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓币收款总订单数量：</div>
+                <div class="layui-col-xs8">{$data.paymentNumTotalLock}</div>
+            </div>
+            <div class="layui-row">
+                <div class="layui-col-xs4">锁仓币收款总数字币数量：</div>
+                <div class="layui-col-xs8">{$data.paymentCoinTotalLock}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}

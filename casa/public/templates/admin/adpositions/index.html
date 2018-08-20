@@ -1,0 +1,74 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header"><span>广告位</span>
+            <button class="layui-btn  layui-btn-sm" onclick="edit(0);" style="float: right;margin-top: 8px;">
+                新增广告位
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-hide" id="artTable"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script type="text/html" id="toolBar">
+    <span class="layui-btn layui-btn-xs" onclick="edit({{d.positionId}});">修改</span>
+    <span class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({{d.positionId}},'{{d.positionName}}');">删除</span>
+</script>
+<script>
+    layui.use(['form', 'laydate', 'layer', 'table'], function () {
+        var laydate = layui.laydate, layer = layui.layer, table = layui.table, form = layui.form;
+        laydate.render({elem: '#startDate'});
+        laydate.render({elem: '#endDate'});
+        //渲染数据表格
+        table.render({
+            elem: '#artTable',
+            id: 'tables',
+            url: SK.U('admin/Adpositions/pageQuery'),
+            limit: 20,
+            limits: [20, 40, 60, 80, 100, 120],
+            loading: true,
+            page: true,
+            text: {
+                none: '暂无相关数据'
+            },
+            even: true,
+            cols: [[ //标题栏
+                {field: 'positionId', title: 'ID', align: 'center'},
+                {field: 'positionName', title: '名称', align: 'center'},
+                {field: 'positionCode', title: '广告代码', align: 'center'},
+                {field: 'positionWidth', title: '建议宽度', align: 'center'},
+                {field: 'positionHeight', title: '建议高度', align: 'center'},
+                {field: 'apSort', title: '排序', align: 'center'},
+                {fixed: 'right', title: '操作', align: 'center', toolbar: '#toolBar'}
+            ]],
+        });
+    });
+
+    /*编辑页面*/
+    function edit(id) {
+        var url = '';
+        if (id == 0) {
+            url = SK.U('admin/Adpositions/toedit');
+        } else {
+            url = SK.U('admin/Adpositions/toedit', 'id=' + id);
+        }
+        SK.popupRight('LAY_PopupAdpositions', url, '600px');
+    }
+
+    /*删除页面*/
+    function del(id, name) {
+        layer.confirm('您确认删除 ' + name + ' 广告位吗？', {title: '删除广告位'}, function (index) {
+            $.post(SK.U('admin/Adpositions/del'), {id: id}, function (data) {
+                layer.msg(data.msg);
+                if (data.status == 1) {
+                    setTimeout('location.reload();', 2000);
+                }
+            })
+        });
+    }
+</script>
+{/block}

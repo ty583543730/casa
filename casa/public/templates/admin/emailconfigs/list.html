@@ -1,0 +1,75 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header"><span>邮件配置</span>
+            <button class="layui-btn  layui-btn-sm" onclick="edit(0);" style="float: right;margin-top: 8px;">
+                新增邮件配置
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-hide" id="configTable"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script type="text/html" id="toolBar">
+    <span class="layui-btn layui-btn-xs" onclick="edit({{d.id}});">修改</span>
+    <span class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({{d.id}});">删除</span>
+</script>
+<script>
+    layui.use(['form', 'layer', 'table'], function () {
+        var layer = layui.layer, table = layui.table, form = layui.form;
+        //渲染数据表格
+        table.render({
+            elem: '#configTable',
+            url: SK.U('admin/emailconfigs/pageQuery'),
+            limit: 20,
+            limits: [20, 40, 60, 80, 100, 120],
+            loading: true,
+            page: true,
+            text: {
+                none: '暂无相关数据'
+            },
+            cols: [[ //标题栏
+                {field: 'id', title: 'ID', align: 'center'},
+                {field: 'mailSmtp', title: 'SMTP服务器', align: 'center'},
+                {field: 'mailPort', title: 'SMTP端口', align: 'center'},
+                {field: 'mailAuth', title: '是否验证SMTP', align: 'center'},
+                {field: 'mailAddress', title: 'SMTP发件人邮箱', align: 'center'},
+                {field: 'mailUserName', title: 'SMTP登录账号', align: 'center'},
+                {field: 'mailPassword', title: 'SMTP登录密码', align: 'center'},
+                {field: 'mailSendTitle', title: '发件人标题', align: 'center'},
+                {field: 'useTime', title: '今天可使用次数', align: 'center'},
+                {field: 'createTime', title: '创建时间', align: 'center'},
+                {fixed: 'right', title: '操作', align: 'center', toolbar: '#toolBar'}
+            ]],
+        });
+    });
+
+    /*编辑页面*/
+    function edit(id) {
+        var url = '';
+        if (id == 0) {
+            url = SK.U('admin/emailconfigs/toedit');
+        } else {
+            url = SK.U('admin/emailconfigs/toedit', 'id=' + id);
+        }
+        //location.href=url;
+        SK.popupRight('LAY_PopupRoles', url, '600px');
+    }
+
+    /*删除页面*/
+    function del(id) {
+        layer.confirm('您确认删除该配置吗？', {title: '删除配置'}, function (index) {
+            $.post(SK.U('admin/emailconfigs/del'), {id: id}, function (data) {
+                layer.msg(data.msg);
+                if (data.status == 1) {
+                    setTimeout('location.reload();', 2000);
+                }
+            })
+        });
+    }
+</script>
+{/block}

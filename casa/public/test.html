@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>websocket</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    if ("WebSocket" in window) {
+        // 打开一个 web socket
+        var ws = new WebSocket("ws://127.0.0.1:9501");
+
+        ws.onopen = function () {
+            // Web Socket 已连接上，使用 send() 方法发送数据
+            var content = '{"type":"bind","uid":"4","room":"1000","rtime":1528948223,"sign":"44748e78ce8ccc7142568f3935c0cf86"}';
+            ws.send(content);
+            console.log("数据发送中..., 内容：" + content);
+            //定时维持心跳
+            setInterval(function () {
+                ws.send('{"type":"heartbeat","rtime":1528948223,"sign":"f8d2afeb1012637c029f7da1744231bf"}');
+            }, 65000);
+            //5s后发送一条消息
+            setTimeout(function () {
+                ws.send('{"type":"customized","function":"chat","room":"1000","content":"\u53d1\u9001\u6d88\u606f\u6d4b\u8bd5","rtime":1528948223,"sign":"62b4ed5d39d7d3fc9b7b5bc2f0079847"}');
+            }, 30000);
+        };
+
+        ws.onmessage = function (evt) {
+            var received_msg = evt.data;
+            console.log("数据已接收..., 内容：" + received_msg);
+        };
+
+        ws.onclose = function () {
+            // 关闭 websocket
+            console.log("连接已关闭...");
+        };
+    } else {
+        // 浏览器不支持 WebSocket
+        alert("您的浏览器不支持 WebSocket!");
+    }
+</script>
+</body>
+</html>

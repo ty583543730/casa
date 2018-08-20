@@ -1,0 +1,65 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header"><span>用户角色</span>
+            <button class="layui-btn  layui-btn-sm" onclick="edit(0)" style="float: right;margin-top: 8px;">
+                新增角色
+            </button>
+        </div>
+        <div class="layui-card-body">
+            <table class="layui-hide" id="rolesTable"></table>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer_js"}
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" onclick="edit({{d.roleId}})">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" onclick="del({{d.roleId}},'{{d.roleName}}')">删除</a>
+</script>
+<script>
+    layui.use(['tree', 'layer', 'table'], function () {
+        var layer = layui.layer, table = layui.table;
+        table.render({
+            elem: '#rolesTable',
+            limit: 20,
+            limits: [20, 40, 60, 80, 100, 120],
+            url: SK.U('admin/roles/pageQuery'),
+            cellMinWidth: 80,
+            page: true,
+            cols: [[
+                {field: 'roleId', width: 40, title: 'ID', sort: true},
+                {field: 'roleName', title: '名称'},
+                {field: 'roleDesc', title: '角色描述'},
+                {fixed: 'right', width: 160, title: '操作', align: 'center', toolbar: '#barDemo'}
+            ]]
+        });
+    });
+
+    /*编辑页面*/
+    function edit(id) {
+        var url = '';
+        if (id == 0) {
+            url = SK.U('admin/roles/toedit');
+        } else {
+            url = SK.U('admin/roles/toedit', 'id=' + id);
+        }
+        //location.href=url;
+        SK.popupRight('LAY_PopupRoles', url, '600px');
+    }
+
+    /*删除页面*/
+    function del(id, name) {
+        layer.confirm('您确认删除 ' + name + ' 角色吗？', {title: '删除角色'}, function (index) {
+            $.post(SK.U('admin/roles/del'), {id: id}, function (data) {
+                layer.msg(data.msg);
+                if (data.status == 1) {
+                    setTimeout('location.reload();', 2000);
+                }
+            })
+        });
+    }
+</script>
+{/block}

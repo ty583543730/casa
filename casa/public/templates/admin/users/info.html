@@ -1,0 +1,194 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">用户详情</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户ID</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="userId" value="{$info.userId}" class="layui-input"
+                                       disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="userNo" value="{$info.userNo}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="userName" value="{$info.userName}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-md4">-->
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">国家码</label>-->
+                    <!--<div class="layui-input-block">-->
+                    <!--<input type="text" name="phoneArea" id="phoneArea" value="{$info.phoneArea}"-->
+                    <!--class="layui-input" disabled>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">手机号</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="userPhone" value="{$info.userPhone}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录密码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="loginPwd" id="loginPwd" placeholder="登录密码 修改时不填不修改" value=""
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付密码</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="payPwd" id="payPwd" placeholder="支付密码 修改时不填不修改" value=""
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户类型</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="userType" value="{$info.userType}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">真实姓名</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="trueName" value="{$info.trueName}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">交易所id</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="exchangeId" value="{$info.exchangeId}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">交易所名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="exchangeName" value="{$info.exchangeName}"
+                                       class="layui-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-md4">-->
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">头像</label>-->
+                    <!--<div class="layui-input-block">-->
+                    <!--<img src="{$info.userPhoto}" width="100">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">推荐人id</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="parentId" id="parentId" placeholder="推荐人id"
+                                       value="{$info.parentId}" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">用户状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="userStatus" value="1" title="正常" {if
+                                       condition="$info['userStatus'] eq 1" }checked{/if} >
+                                <input type="radio" name="userStatus" value="-1" title="锁定账户" {if
+                                       condition="$info['userStatus'] eq -1" }checked{/if} >
+                                <input type="radio" name="userStatus" value="2" title="锁定奖励" {if
+                                       condition="$info['userStatus'] eq 2" }checked{/if} >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">支付开关</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="payStatus" value="1" title="开启" {if
+                                       condition="$info['payStatus'] eq 1" }checked{/if} >
+                                <input type="radio" name="payStatus" value="0" title="关闭" {if
+                                       condition="$info['payStatus'] eq 0" }checked{/if} >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">登录状态</label>
+                            <div class="layui-input-block">
+                                <input type="radio" name="loginStatus" value="1" title="开启" {if
+                                       condition="$info['loginStatus'] eq 1" }checked{/if} >
+                                <input type="radio" name="loginStatus" value="0" title="关闭" {if
+                                       condition="$info['loginStatus'] eq 0" }checked{/if} >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use('form', function () {
+        var form = layui.form;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            $.post(SK.U('admin/users/edit'), data.field, function (res) {
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    setTimeout('parent.location.reload();', 2000);
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>
+
+{/block}

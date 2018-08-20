@@ -1,0 +1,2336 @@
+---------------------------------------------------------------
+[ 2018-08-16T11:37:23+08:00 ] 127.0.0.1 GET /admin/index
+[ info ] casa.com/admin/index [运行时间：1.148074s][吞吐率：0.87req/s] [内存消耗：4,301.65kb] [文件加载：61]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.746570s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.162670s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091558s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.098972s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:24+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] casa.com/admin/login/index.html [运行时间：1.240617s][吞吐率：0.81req/s] [内存消耗：4,235.84kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.714560s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.269980s ]
+[ info ] [ RUN ] app\admin\controller\Login->index[ E:\casa\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] templates/admin/login\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.133677s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092625s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.139957s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:26+08:00 ] 127.0.0.1 GET /admin/login/getverify.html
+[ info ] casa.com/admin/login/getverify.html [运行时间：1.024245s][吞吐率：0.98req/s] [内存消耗：4,227.29kb] [文件加载：62]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getverify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.695539s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.264971s ]
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ E:\casa\application\admin\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132554s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.090319s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.101387s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:33+08:00 ] 127.0.0.1 POST /admin/login/checkLogin
+[ info ] casa.com/admin/login/checkLogin [运行时间：1.053494s][吞吐率：0.95req/s] [内存消耗：4,269.63kb] [文件加载：64]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'checkLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '47',
+)
+[ info ] [ PARAM ] array (
+  'loginName' => 'admin',
+  'loginPwd' => '123456',
+  'verifyCode' => '1928',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.703051s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.269542s ]
+[ info ] [ RUN ] app\admin\controller\Login->checkLogin[ E:\casa\application\admin\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132260s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092183s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095178s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:34+08:00 ] 127.0.0.1 GET /admin/login/getVerify?rnd=0.3549180270951433
+[ info ] casa.com/admin/login/getVerify?rnd=0.3549180270951433 [运行时间：1.021946s][吞吐率：0.98req/s] [内存消耗：4,227.76kb] [文件加载：62]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getVerify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'rnd' => '0.3549180270951433',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.691377s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.269608s ]
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ E:\casa\application\admin\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130120s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092047s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095614s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:41+08:00 ] 127.0.0.1 POST /admin/login/checkLogin
+[ info ] casa.com/admin/login/checkLogin [运行时间：1.820386s][吞吐率：0.55req/s] [内存消耗：4,274.02kb] [文件加载：64]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'checkLogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '47',
+)
+[ info ] [ PARAM ] array (
+  'loginName' => 'admin',
+  'loginPwd' => '123456',
+  'verifyCode' => '0168',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.691043s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.261830s ]
+[ info ] [ RUN ] app\admin\controller\Login->checkLogin[ E:\casa\application\admin\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129692s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088380s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095133s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_staffs` [ RunTime:0.090696s ]
+[ sql ] [ SQL ] SELECT * FROM `sk_staffs` WHERE  `loginName` = 'admin'  AND `workStatus` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.093592s ]
+[ sql ] [ SQL ] UPDATE `sk_staffs`  SET `lastTime`='2018-08-16 11:37:40',`lastIP`='127.0.0.1'  WHERE  `staffId` = 1 [ RunTime:0.095750s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_staff_logins` [ RunTime:0.107167s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_staff_logins` (`staffId` , `loginTime` , `loginIp`) VALUES (1 , '2018-08-16 11:37:40' , '127.0.0.1') [ RunTime:0.095086s ]
+[ sql ] [ SQL ] SELECT `privilegeCode` FROM `sk_privileges` WHERE  `dataFlag` = 1 [ RunTime:0.090466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_menus` [ RunTime:0.094603s ]
+[ sql ] [ SQL ] SELECT `menuId` FROM `sk_menus` WHERE  `dataFlag` = 1 [ RunTime:0.091817s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:49+08:00 ] 127.0.0.1 GET /admin/index/index
+[ info ] casa.com/admin/index/index [运行时间：8.366543s][吞吐率：0.12req/s] [内存消耗：4,578.58kb] [文件加载：64]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/login/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.702193s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.273293s ]
+[ info ] [ RUN ] app\admin\controller\Index->index[ E:\casa\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] templates/admin/index\index.html [ array (
+  0 => 'v',
+  1 => 'menus',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.137298s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088028s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_menus` [ RunTime:0.090944s ]
+[ sql ] [ SQL ] SELECT `menuId`,`alias`,`menuName` FROM `sk_menus` WHERE  `parentId` = 0  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.093909s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 1  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.095130s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 2  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094204s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 6  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.092464s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 9  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.096369s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 9  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089784s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 10  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089770s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 13  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089447s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 17  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089642s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 20  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094120s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 21  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.090065s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 21  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090541s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 22  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.087989s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 22  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.094420s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 23  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088187s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 23  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090677s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 51  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.091866s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 51  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.094846s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 52  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089623s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 52  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090838s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 53  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094601s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 44  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.090004s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 44  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090234s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 45  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094480s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 45  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.092244s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 46  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.095743s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 46  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.091733s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 47  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.090988s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 47  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090321s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 48  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088374s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 48  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089712s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 49  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.097893s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 49  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.092467s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 50  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.091050s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 50  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090376s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 24  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.093533s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 25  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094173s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 25  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090091s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 26  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.093516s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 26  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090025s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 28  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.087349s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 28  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089899s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 27  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088755s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 27  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090074s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 29  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089530s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 29  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089312s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 30  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.104948s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 30  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.088990s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 31  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.090306s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 31  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.095362s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 32  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.095347s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 32  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.093116s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 33  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.094955s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 33  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090267s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 34  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089007s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 34  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089888s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 35  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.092411s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 35  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089540s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 36  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.093208s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 37  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.092585s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 37  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.091288s ]
+[ sql ] [ SQL ] SELECT `menuId`,`menuName` FROM `sk_menus` WHERE  `parentId` = 38  AND `dataFlag` = 1  AND `menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.091258s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 39  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.096199s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 39  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090035s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 40  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088487s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 40  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.094211s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 41  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088421s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 41  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.090010s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 42  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.089085s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 42  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.089420s ]
+[ sql ] [ SQL ] SELECT `m`.`menuId`,`m`.`menuName`,`privilegeUrl` FROM `sk_menus` `m` INNER JOIN `sk_privileges` `p` ON `m`.`menuId`=p.menuId and isMenuPrivilege=1 and p.dataFlag=1 WHERE  `parentId` = 43  AND `m`.`dataFlag` = 1  AND `m`.`menuId` IN (1,20,24,36,38,53,2,6,9,10,13,17,3,4,5,7,8,16,11,12,14,15,18,19,21,22,23,51,52,25,26,27,28,29,30,31,32,33,34,35,37,39,40,41,42,43,44,45,46,47,48,49,50) ORDER BY `menuSort` ASC [ RunTime:0.088168s ]
+[ sql ] [ SQL ] SELECT `privilegeUrl` FROM `sk_privileges` WHERE  `menuId` = 43  AND `isMenuPrivilege` = 1  AND `dataFlag` = 1 LIMIT 1 [ RunTime:0.091453s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:52+08:00 ] 127.0.0.1 GET /admin/index/console.html
+[ info ] casa.com/admin/index/console.html [运行时间：2.229980s][吞吐率：0.45req/s] [内存消耗：4,403.62kb] [文件加载：65]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'console',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.673610s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.276916s ]
+[ info ] [ RUN ] app\admin\controller\Index->console[ E:\casa\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] templates/admin/index\console.html [ array (
+  0 => 'v',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.131473s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087819s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095811s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_users_realname` [ RunTime:0.091679s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users_realname` WHERE  `checkStatus` = 0 LIMIT 1 [ RunTime:0.090906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_coin_draw` [ RunTime:0.092232s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_coin_draw` WHERE  `status` = 0 LIMIT 1 [ RunTime:0.091067s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_users` [ RunTime:0.095681s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users` WHERE  `createTime` BETWEEN '2018-08-16 00:00:00' AND '2018-08-16 23:59:59' LIMIT 1 [ RunTime:0.091508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_users_upgrade` [ RunTime:0.087736s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users_upgrade` WHERE  `afterRole` = 2  AND `createTime` BETWEEN '2018-08-16 00:00:00' AND '2018-08-16 23:59:59' LIMIT 1 [ RunTime:0.095526s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users_upgrade` WHERE  `afterRole` = 3  AND `createTime` BETWEEN '2018-08-16 00:00:00' AND '2018-08-16 23:59:59' LIMIT 1 [ RunTime:0.089861s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_date_users` [ RunTime:0.087724s ]
+[ sql ] [ SQL ] SELECT sum(userNum) as registerMonth,sum(xitongNum) as adminMonth FROM `sk_date_users` WHERE  `month` = 201808 LIMIT 1 [ RunTime:0.090473s ]
+[ sql ] [ SQL ] SELECT `userNumTotal`,`xitongTotal` FROM `sk_date_users` WHERE  `date` = 20180815 LIMIT 1 [ RunTime:0.086806s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:37:54+08:00 ] 127.0.0.1 POST /admin/index/registerCount
+[ info ] casa.com/admin/index/registerCount [运行时间：2.031274s][吞吐率：0.49req/s] [内存消耗：4,307.95kb] [文件加载：64]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'registerCount',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/index/console.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.696720s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.276902s ]
+[ info ] [ RUN ] app\admin\controller\Index->registerCount[ E:\casa\application\admin\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.126600s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092197s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_users` [ RunTime:0.089709s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users` WHERE  `createTime` > '2018-08-00 00:00:00' LIMIT 1 [ RunTime:0.091374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_date_users` [ RunTime:0.090335s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201802 LIMIT 1 [ RunTime:0.090290s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201803 LIMIT 1 [ RunTime:0.087517s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201804 LIMIT 1 [ RunTime:0.090300s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201805 LIMIT 1 [ RunTime:0.086436s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201806 LIMIT 1 [ RunTime:0.090344s ]
+[ sql ] [ SQL ] SELECT SUM(userNum) AS tp_sum FROM `sk_date_users` WHERE  `month` = 201807 LIMIT 1 [ RunTime:0.090537s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users` WHERE  `createTime` > '2018-08-16 00:00:00' LIMIT 1 [ RunTime:0.089946s ]
+[ sql ] [ SQL ] SELECT `date`,`userNum` FROM `sk_date_users` ORDER BY `id` ASC LIMIT 6 [ RunTime:0.090468s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:12+08:00 ] 127.0.0.1 GET /admin/Release/index
+[ info ] casa.com/admin/Release/index [运行时间：1.482993s][吞吐率：0.67req/s] [内存消耗：4,138.46kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Release',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.724273s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.568382s ]
+[ info ] [ RUN ] app\admin\controller\Release->index[ E:\casa\application\admin\controller\Release.php ]
+[ info ] [ VIEW ] templates/admin/release\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.157691s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092262s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.098967s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.123880s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:38:11' , 44 , '锁仓币释放' , '' , '/admin/Release/index' , '127.0.0.1') [ RunTime:0.118877s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:14+08:00 ] 127.0.0.1 GET /admin/Release/index?page=1&limit=20&userId=
+[ info ] casa.com/admin/Release/index?page=1&limit=20&userId= [运行时间：1.511426s][吞吐率：0.66req/s] [内存消耗：4,344.38kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Release',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Release/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.710467s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.461221s ]
+[ info ] [ RUN ] app\admin\controller\Release->index[ E:\casa\application\admin\controller\Release.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130822s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087859s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.088352s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:38:13' , 44 , '锁仓币释放' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\"}' , '/admin/Release/index?page=1&limit=20&userId=' , '127.0.0.1') [ RunTime:0.089951s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release` [ RunTime:0.091304s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release` LIMIT 1 [ RunTime:0.090692s ]
+[ sql ] [ SQL ] SELECT `id`,`userId`,`ownNum`,`baseRatio`,`turnover`,`addRatio`,`num`,`createTime` FROM `sk_release` ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.091182s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:21+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index
+[ info ] casa.com/admin/Releaseconfig/index [运行时间：1.336577s][吞吐率：0.75req/s] [内存消耗：4,143.03kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.674387s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.467973s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.131567s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.092905s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.098500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.092506s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:38:21' , 45 , '锁仓币释放配置' , '' , '/admin/Releaseconfig/index' , '127.0.0.1') [ RunTime:0.090540s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:23+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index?page=1&limit=20
+[ info ] casa.com/admin/Releaseconfig/index?page=1&limit=20 [运行时间：1.505312s][吞吐率：0.66req/s] [内存消耗：4,352.84kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.698700s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.468730s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129808s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.096575s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.098897s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.092845s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:38:23' , 45 , '锁仓币释放配置' , '{\"page\":\"1\",\"limit\":\"20\"}' , '/admin/Releaseconfig/index?page=1&limit=20' , '127.0.0.1') [ RunTime:0.093680s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.099916s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.089807s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.094189s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:29+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/add?id=0
+[ info ] casa.com/admin/Releaseconfig/add?id=0 [运行时间：1.455172s][吞吐率：0.69req/s] [内存消耗：4,314.00kb] [文件加载：67]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.695295s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.281026s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\add.html [ array (
+  0 => 'v',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.133088s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088278s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.096552s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.091808s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,10 [ RunTime:0.094381s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:35+08:00 ] 127.0.0.1 POST /admin/Releaseconfig/add
+[ info ] casa.com/admin/Releaseconfig/add [运行时间：1.269917s][吞吐率：0.79req/s] [内存消耗：4,147.94kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/add?id=0',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '94',
+)
+[ info ] [ PARAM ] array (
+  'min' => '1',
+  'max' => '999',
+  'baseRatio' => '0.05',
+  'addRatio' => '0.01',
+  'addTop' => '0.10',
+  'createTime' => '2018-08-03 15:05:41',
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.718128s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.274003s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130883s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091744s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.099695s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.092460s ]
+[ sql ] [ SQL ] UPDATE `sk_release_config`  SET `min`=1,`max`=999,`baseRatio`=0.05,`addRatio`=0.01,`addTop`=0.1,`createTime`='2018-08-03 15:05:41',`id`=2  WHERE  `id` = 2 [ RunTime:0.089465s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:43+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/add?id=0
+[ info ] casa.com/admin/Releaseconfig/add?id=0 [运行时间：1.411772s][吞吐率：0.71req/s] [内存消耗：4,314.00kb] [文件加载：67]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.646420s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.276631s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\add.html [ array (
+  0 => 'v',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127831s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088759s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.098813s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.099062s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.091329s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,10 [ RunTime:0.091453s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:38:57+08:00 ] 127.0.0.1 POST /admin/Releaseconfig/add
+[ info ] casa.com/admin/Releaseconfig/add [运行时间：1.296628s][吞吐率：0.77req/s] [内存消耗：4,148.59kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/add?id=0',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '94',
+)
+[ info ] [ PARAM ] array (
+  'min' => '1',
+  'max' => '999',
+  'baseRatio' => '0.05',
+  'addRatio' => '0.01',
+  'addTop' => '0.10',
+  'createTime' => '2018-08-03 15:05:41',
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.730830s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.278796s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.155891s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091214s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.100010s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.090000s ]
+[ sql ] [ SQL ] UPDATE `sk_release_config`  SET `min`=1,`max`=999,`baseRatio`=0.05,`addRatio`=0.01,`addTop`=0.1,`createTime`='2018-08-03 15:05:41',`id`=2  WHERE  `id` = 2 [ RunTime:0.090007s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:03+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index
+[ info ] casa.com/admin/Releaseconfig/index [运行时间：1.385979s][吞吐率：0.72req/s] [内存消耗：4,143.82kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.715910s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.475320s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.155507s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091586s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.094849s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.092420s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:03' , 45 , '锁仓币释放配置' , '' , '/admin/Releaseconfig/index' , '127.0.0.1') [ RunTime:0.093634s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:05+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index?page=1&limit=20
+[ info ] casa.com/admin/Releaseconfig/index?page=1&limit=20 [运行时间：1.462163s][吞吐率：0.68req/s] [内存消耗：4,352.99kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.675907s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.444616s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.131225s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088745s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.099316s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.088294s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:05' , 45 , '锁仓币释放配置' , '{\"page\":\"1\",\"limit\":\"20\"}' , '/admin/Releaseconfig/index?page=1&limit=20' , '127.0.0.1') [ RunTime:0.086812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.094090s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.090381s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.094508s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:10+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index
+[ info ] casa.com/admin/Releaseconfig/index [运行时间：1.308986s][吞吐率：0.76req/s] [内存消耗：4,143.25kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.666453s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.461530s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130538s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091174s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.100227s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.093138s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:10' , 45 , '锁仓币释放配置' , '' , '/admin/Releaseconfig/index' , '127.0.0.1') [ RunTime:0.090341s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:12+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index?page=1&limit=20
+[ info ] casa.com/admin/Releaseconfig/index?page=1&limit=20 [运行时间：1.506118s][吞吐率：0.66req/s] [内存消耗：4,352.84kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.706574s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.473576s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129538s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088214s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.092990s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:11' , 45 , '锁仓币释放配置' , '{\"page\":\"1\",\"limit\":\"20\"}' , '/admin/Releaseconfig/index?page=1&limit=20' , '127.0.0.1') [ RunTime:0.095499s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.093900s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.086655s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.090556s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:20+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/add?id=0
+[ info ] casa.com/admin/Releaseconfig/add?id=0 [运行时间：1.407985s][吞吐率：0.71req/s] [内存消耗：4,513.41kb] [文件加载：69]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.671520s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.281221s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\add.html [ array (
+  0 => 'v',
+  1 => 'data',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129492s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087943s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.103845s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.087334s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.087529s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,10 [ RunTime:0.095391s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:24+08:00 ] 127.0.0.1 POST /admin/Releaseconfig/add
+[ info ] casa.com/admin/Releaseconfig/add [运行时间：1.148636s][吞吐率：0.87req/s] [内存消耗：4,146.62kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/add?id=0',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '89',
+)
+[ info ] [ PARAM ] array (
+  'min' => '1',
+  'max' => '999',
+  'baseRatio' => '0.05',
+  'addRatio' => '0.01',
+  'addTop' => '0.10',
+  'createTime' => '2018-08-03 15:05:41',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.669944s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.255012s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->add[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132214s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088234s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.092107s ]
+[ sql ] [ SQL ] INSERT INTO `sk_release_config` (`min` , `max` , `baseRatio` , `addRatio` , `addTop` , `createTime`) VALUES (1 , 999 , 0.05 , 0.01 , 0.1 , '2018-08-03 15:05:41') [ RunTime:0.096659s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:29+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index
+[ info ] casa.com/admin/Releaseconfig/index [运行时间：1.261360s][吞吐率：0.79req/s] [内存消耗：4,143.25kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.650201s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.452186s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.128925s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.089243s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091042s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.088529s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:28' , 45 , '锁仓币释放配置' , '' , '/admin/Releaseconfig/index' , '127.0.0.1') [ RunTime:0.086870s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:31+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index?page=1&limit=20
+[ info ] casa.com/admin/Releaseconfig/index?page=1&limit=20 [运行时间：1.475386s][吞吐率：0.68req/s] [内存消耗：4,353.17kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.684515s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.460132s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132367s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088213s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091293s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.088885s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:30' , 45 , '锁仓币释放配置' , '{\"page\":\"1\",\"limit\":\"20\"}' , '/admin/Releaseconfig/index?page=1&limit=20' , '127.0.0.1') [ RunTime:0.089891s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.091866s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.086436s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.090503s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:39+08:00 ] 127.0.0.1 POST /admin/Releaseconfig/del
+[ info ] casa.com/admin/Releaseconfig/del [运行时间：1.347445s][吞吐率：0.74req/s] [内存消耗：4,145.13kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'del',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'origin' => 'http://casa.com',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+  'content-length' => '4',
+)
+[ info ] [ PARAM ] array (
+  'id' => '9',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.695959s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.273985s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->del[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127752s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088417s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.094859s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.092329s ]
+[ sql ] [ SQL ] SELECT * FROM `sk_release_config` WHERE  `id` = 9 LIMIT 1 [ RunTime:0.094675s ]
+[ sql ] [ SQL ] DELETE FROM `sk_release_config`    WHERE  `id` = 9 [ RunTime:0.092647s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:43+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index
+[ info ] casa.com/admin/Releaseconfig/index [运行时间：1.377495s][吞吐率：0.73req/s] [内存消耗：4,143.25kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.719666s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.458831s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ VIEW ] templates/admin/releaseconfig\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.158349s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087914s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.094786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.090279s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:42' , 45 , '锁仓币释放配置' , '' , '/admin/Releaseconfig/index' , '127.0.0.1') [ RunTime:0.090614s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:41:45+08:00 ] 127.0.0.1 GET /admin/Releaseconfig/index?page=1&limit=20
+[ info ] casa.com/admin/Releaseconfig/index?page=1&limit=20 [运行时间：1.484915s][吞吐率：0.67req/s] [内存消耗：4,352.84kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Releaseconfig',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Releaseconfig/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.690521s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.466945s ]
+[ info ] [ RUN ] app\admin\controller\Releaseconfig->index[ E:\casa\application\admin\controller\Releaseconfig.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129084s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088929s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.094921s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.093755s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:41:44' , 45 , '锁仓币释放配置' , '{\"page\":\"1\",\"limit\":\"20\"}' , '/admin/Releaseconfig/index?page=1&limit=20' , '127.0.0.1') [ RunTime:0.089741s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_release_config` [ RunTime:0.090634s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_release_config` LIMIT 1 [ RunTime:0.090511s ]
+[ sql ] [ SQL ] SELECT `id`,`min`,`max`,`baseRatio`,`addRatio`,`addTop`,`createTime` FROM `sk_release_config` ORDER BY `id` ASC LIMIT 0,20 [ RunTime:0.090693s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:07+08:00 ] 127.0.0.1 GET /admin/Savings/index
+[ info ] casa.com/admin/Savings/index [运行时间：1.351322s][吞吐率：0.74req/s] [内存消耗：4,138.32kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Savings',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.689263s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.453383s ]
+[ info ] [ RUN ] app\admin\controller\Savings->index[ E:\casa\application\admin\controller\Savings.php ]
+[ info ] [ VIEW ] templates/admin/savings\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.156141s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087860s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.092032s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.091889s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:07' , 46 , '储蓄' , '' , '/admin/Savings/index' , '127.0.0.1') [ RunTime:0.094072s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:09+08:00 ] 127.0.0.1 GET /admin/Savings/index?page=1&limit=20&userId=&orderNo=
+[ info ] casa.com/admin/Savings/index?page=1&limit=20&userId=&orderNo= [运行时间：1.507792s][吞吐率：0.66req/s] [内存消耗：4,346.09kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Savings',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Savings/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+  'orderNo' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.702177s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.473803s ]
+[ info ] [ RUN ] app\admin\controller\Savings->index[ E:\casa\application\admin\controller\Savings.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.129465s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088314s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.090171s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:09' , 46 , '储蓄' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\",\"orderNo\":\"\"}' , '/admin/Savings/index?page=1&limit=20&userId=&orderNo=' , '127.0.0.1') [ RunTime:0.089682s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_savings` [ RunTime:0.091587s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_savings` WHERE  `dataFlag` = 1 LIMIT 1 [ RunTime:0.089998s ]
+[ sql ] [ SQL ] SELECT * FROM `sk_savings` WHERE  `dataFlag` = 1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.091115s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:14+08:00 ] 127.0.0.1 GET /admin/Transferexchange/index
+[ info ] casa.com/admin/Transferexchange/index [运行时间：1.346354s][吞吐率：0.74req/s] [内存消耗：4,139.47kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Transferexchange',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.702457s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.458513s ]
+[ info ] [ RUN ] app\admin\controller\Transferexchange->index[ E:\casa\application\admin\controller\Transferexchange.php ]
+[ info ] [ VIEW ] templates/admin/transferexchange\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130593s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.089387s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.094953s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.093597s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:14' , 47 , '交易所数字币划拨' , '' , '/admin/Transferexchange/index' , '127.0.0.1') [ RunTime:0.089599s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:16+08:00 ] 127.0.0.1 GET /admin/Transferexchange/index?page=1&limit=20&userId=&orderNo=
+[ info ] casa.com/admin/Transferexchange/index?page=1&limit=20&userId=&orderNo= [运行时间：1.492871s][吞吐率：0.67req/s] [内存消耗：4,345.43kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Transferexchange',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Transferexchange/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+  'orderNo' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.699592s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.453363s ]
+[ info ] [ RUN ] app\admin\controller\Transferexchange->index[ E:\casa\application\admin\controller\Transferexchange.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130806s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.095909s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.099482s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.087245s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:15' , 47 , '交易所数字币划拨' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\",\"orderNo\":\"\"}' , '/admin/Transferexchange/index?page=1&limit=20&userId=&orderNo=' , '127.0.0.1') [ RunTime:0.090531s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_transfer_exchange` [ RunTime:0.095200s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_transfer_exchange` WHERE  `dataFlag` = 1 LIMIT 1 [ RunTime:0.091909s ]
+[ sql ] [ SQL ] SELECT `id`,`userId`,`type`,`coin`,`total`,`orderNo`,`fee`,`num`,`ip`,`remark`,`createTime` FROM `sk_transfer_exchange` WHERE  `dataFlag` = 1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.095564s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:19+08:00 ] 127.0.0.1 GET /admin/Logcp/index
+[ info ] casa.com/admin/Logcp/index [运行时间：1.320743s][吞吐率：0.76req/s] [内存消耗：4,138.46kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Logcp',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.671291s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.467662s ]
+[ info ] [ RUN ] app\admin\controller\Logcp->index[ E:\casa\application\admin\controller\Logcp.php ]
+[ info ] [ VIEW ] templates/admin/logcp\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.130490s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.086799s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.094459s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:19' , 48 , '算力日志' , '' , '/admin/Logcp/index' , '127.0.0.1') [ RunTime:0.089915s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:21+08:00 ] 127.0.0.1 GET /admin/Logcp/index?page=1&limit=20&userId=&startDate=&endDate=
+[ info ] casa.com/admin/Logcp/index?page=1&limit=20&userId=&startDate=&endDate= [运行时间：1.472319s][吞吐率：0.68req/s] [内存消耗：4,341.09kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Logcp',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Logcp/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+  'startDate' => '',
+  'endDate' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.697329s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.447009s ]
+[ info ] [ RUN ] app\admin\controller\Logcp->index[ E:\casa\application\admin\controller\Logcp.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.128217s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088543s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.091386s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.090359s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:20' , 48 , '算力日志' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\",\"startDate\":\"\",\"endDate\":\"\"}' , '/admin/Logcp/index?page=1&limit=20&userId=&startDate=&endDate=' , '127.0.0.1') [ RunTime:0.089980s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_cp` [ RunTime:0.093564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_log_cp` LIMIT 1 [ RunTime:0.091287s ]
+[ sql ] [ SQL ] SELECT * FROM `sk_log_cp` ORDER BY `id` LIMIT 0,10 [ RunTime:0.089019s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:23+08:00 ] 127.0.0.1 GET /admin/Logscore/index
+[ info ] casa.com/admin/Logscore/index [运行时间：1.307874s][吞吐率：0.76req/s] [内存消耗：4,138.49kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Logscore',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.666230s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.464087s ]
+[ info ] [ RUN ] app\admin\controller\Logscore->index[ E:\casa\application\admin\controller\Logscore.php ]
+[ info ] [ VIEW ] templates/admin/logscore\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.133625s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.091157s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.092103s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.089595s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:22' , 49 , '积分流水' , '' , '/admin/Logscore/index' , '127.0.0.1') [ RunTime:0.089255s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:24+08:00 ] 127.0.0.1 GET /admin/Logscore/index?page=1&limit=20&userId=&orderNo=
+[ info ] casa.com/admin/Logscore/index?page=1&limit=20&userId=&orderNo= [运行时间：1.491341s][吞吐率：0.67req/s] [内存消耗：4,350.66kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Logscore',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Logscore/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+  'orderNo' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.689303s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.463467s ]
+[ info ] [ RUN ] app\admin\controller\Logscore->index[ E:\casa\application\admin\controller\Logscore.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127812s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088063s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095867s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.093124s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:24' , 49 , '积分流水' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\",\"orderNo\":\"\"}' , '/admin/Logscore/index?page=1&limit=20&userId=&orderNo=' , '127.0.0.1') [ RunTime:0.090168s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_score` [ RunTime:0.096538s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_log_score` WHERE  `dataFlag` = 1 LIMIT 1 [ RunTime:0.090092s ]
+[ sql ] [ SQL ] SELECT `id`,`userId`,`orderNo`,`type`,`preNum`,`preBinding`,`num`,`binding`,`remark`,`createTime` FROM `sk_log_score` WHERE  `dataFlag` = 1 ORDER BY `id` DESC LIMIT 0,20 [ RunTime:0.094593s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:26+08:00 ] 127.0.0.1 GET /admin/Usersentrance/index
+[ info ] casa.com/admin/Usersentrance/index [运行时间：1.322842s][吞吐率：0.76req/s] [内存消耗：4,140.65kb] [文件加载：63]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Usersentrance',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/index/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.656667s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.472974s ]
+[ info ] [ RUN ] app\admin\controller\Usersentrance->index[ E:\casa\application\admin\controller\Usersentrance.php ]
+[ info ] [ VIEW ] templates/admin/usersentrance\index.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.128473s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.086932s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.093229s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:26' , 50 , '入场数据' , '' , '/admin/Usersentrance/index' , '127.0.0.1') [ RunTime:0.089926s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:44:28+08:00 ] 127.0.0.1 GET /admin/Usersentrance/index?page=1&limit=20&userId=&startDate=&endDate=
+[ info ] casa.com/admin/Usersentrance/index?page=1&limit=20&userId=&startDate=&endDate= [运行时间：1.435150s][吞吐率：0.70req/s] [内存消耗：4,350.80kb] [文件加载：68]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Usersentrance',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'referer' => 'http://casa.com/admin/Usersentrance/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+  'limit' => '20',
+  'userId' => '',
+  'startDate' => '',
+  'endDate' => '',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.648706s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.457925s ]
+[ info ] [ RUN ] app\admin\controller\Usersentrance->index[ E:\casa\application\admin\controller\Usersentrance.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.132147s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.087996s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_log_operates` [ RunTime:0.089393s ]
+[ sql ] [ SQL ] INSERT INTO `sk_log_operates` (`staffId` , `operateTime` , `menuId` , `operateDesc` , `content` , `operateUrl` , `operateIP`) VALUES (1 , '2018-08-16 11:44:28' , 50 , '入场数据' , '{\"page\":\"1\",\"limit\":\"20\",\"userId\":\"\",\"startDate\":\"\",\"endDate\":\"\"}' , '/admin/Usersentrance/index?page=1&limit=20&userId=&startDate=&endDate=' , '127.0.0.1') [ RunTime:0.092132s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_users_entrance` [ RunTime:0.096718s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `sk_users_entrance` LIMIT 1 [ RunTime:0.090752s ]
+[ sql ] [ SQL ] SELECT * FROM `sk_users_entrance` ORDER BY `id` LIMIT 0,10 [ RunTime:0.091020s ]
+---------------------------------------------------------------
+[ 2018-08-16T11:45:02+08:00 ] 127.0.0.1 GET /admin/Usersentrance/add?id=0
+[ info ] casa.com/admin/Usersentrance/add?id=0 [运行时间：1.130589s][吞吐率：0.88req/s] [内存消耗：4,176.27kb] [文件加载：62]
+[ info ] [ LANG ] E:\casa\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'Usersentrance',
+    2 => 'add',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'casa.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.5702.400 QQBrowser/10.2.1893.400',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://casa.com/admin/Usersentrance/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=p6p4udtsg6uuk1g4ac4c13qme0',
+)
+[ info ] [ PARAM ] array (
+  'id' => '0',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT redis
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\InitConfig @module_init [ RunTime:0.683193s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => 'redis',
+  'auto_start' => true,
+  'host' => '115.28.128.58',
+  'port' => 6379,
+  'password' => 'dPeryV8G6vyAF3pW',
+  'select' => 3,
+  'expire' => 18000,
+  'timeout' => 0,
+  'persistent' => true,
+  'session_name' => 'yc_',
+  'sentinel' => false,
+)
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\ListenAction @action_begin [ RunTime:0.279745s ]
+[ info ] [ RUN ] app\admin\controller\Usersentrance->add[ E:\casa\application\admin\controller\Usersentrance.php ]
+[ info ] [ VIEW ] templates/admin/usersentrance\add.html [ array (
+  0 => 'v',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.152643s ] mysql:host=rm-m5e08873yn656m1y8o.mysql.rds.aliyuncs.com;dbname=casa;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sk_privileges` [ RunTime:0.088478s ]
+[ sql ] [ SQL ] SELECT `a`.`menuId`,`a`.`privilegeName`,`a`.`privilegeCode`,`a`.`privilegeUrl`,`a`.`otherPrivilegeUrl`,`b`.`menuName` FROM `sk_privileges` `a` INNER JOIN `sk_menus` `b` ON `a`.`menuId`=`b`.`menuId` WHERE  `a`.`dataFlag` = 1 [ RunTime:0.095217s ]

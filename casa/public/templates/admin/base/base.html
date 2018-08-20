@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台管理-{:SysConfig("websiteTitle")}</title>
+    <meta name="keywords" content="{:SysConfig('websiteKeywords')}">
+    <meta name="description" content="{:SysConfig('websiteDesc')}" >
+
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="16x16">
+    <link rel="stylesheet" href="__STATIC__/plugins/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="__STATIC__/plugins/layuiadmin/style/admin.css" media="all">
+    {block name="css"}{/block}
+    <script type="text/javascript" src="__STATIC__/js/jquery.min.js"></script>
+    <script src="__STATIC__/plugins/layuiadmin/layui/layui.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/common.js?v={$v}"></script>
+    <script>
+        window.conf = {
+            "APP": "__APP__",
+        };
+        {if condition="!empty(session('sk_staff.privileges'))"}
+        /*设置权限代码到js 可以使用if(SK.GRANT.GGGL_02) xxxxx;判断是否具有权限*/
+        var grants='{:implode(",",session("sk_staff.privileges"))}';
+        SK.setGrants(grants);
+        {/if}
+    </script>
+</head>
+<body>
+{block name="body"}
+<div id="LAY_app">
+    <div class="layui-layout layui-layout-admin">
+        <!-- 头部区域 -->
+        {include file="base/header" /}
+        <!-- 侧边菜单 -->
+        {include file="base/menu" /}
+        <!-- 页面标签 -->
+        {include file="base/pagetabs" /}
+        <!-- 主体内容 -->
+        <div class="layui-body" id="LAY_app_body">
+            <div class="layadmin-tabsbody-item layui-show">
+                <iframe src="{:url('admin/index/console')}" frameborder="0" class="layadmin-iframe"></iframe>
+            </div>
+        </div>
+        <!-- 辅助元素，一般用于移动设备下遮罩 -->
+        <div class="layadmin-body-shade" layadmin-event="shade"></div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+{/block}
+</body>
+</html>

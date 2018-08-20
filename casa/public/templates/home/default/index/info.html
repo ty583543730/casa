@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>钱包网站</title>
+	<!--<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />-->
+	<meta name="msapplication-TileColor" content="#00a8ff">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="16x16">
+	
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/home/bootstrap.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/home/base.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/home/list.css">
+</head>
+
+<body>
+	<!-- 导航菜单栏 -->
+	<div class="navbar navbar-fixed-top blue-bg subnav">
+		<div class="container">
+			<div class="navbar-header pull-left">
+				<a class="navbar-brand" href="{:url('home/index/index')}"><img src="__STATIC__/images/home/logo.png" data-active-url="__STATIC__/images/home/logo-active.png" alt=""></a>
+			</div>
+			<ul class="nav navbar-nav main-nav pull-left">
+				<li><a href="{:url('home/index/index')}">{:lang('home')}</a></li>
+			</ul>
+			<div class="pull-right change-lang">
+				<div class="islang"><span class="textlang">简体中文</span><span class="triangle_border_down"></span></div>
+					<div class="lang-list">
+						<dl>
+							<dd lang="zh-cn" data-name="changeLang">简体中文</dd>
+							<dd lang="en-us" data-name="changeLang">English</dd>
+						</dl>
+				</div>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</div>
+	
+	<!-- 内容 -->
+	<section class="section list-table">
+		<div class="container">
+			<div class="row">
+				<!-- 列表开始 -->
+					<div class="ad_title clearfix">
+						<div class="pull-left clearfix">
+							<a href="javascript:window.history.go(-1);" class="blue"><img src="__STATIC__/images/home/icons/back.png" alt="" class="icon" style="margin-right: 10px;">{:lang('back')}</a>
+						</div>
+						<div class="pull-right color-999" style=" margin-top: 7px;">
+							{$data.createTime}
+						</div>
+					</div>
+					<div class="ad_cont text-center">
+						<h5>{$data.articleTitle}</h5>
+						<p>
+							{$data.articleContent}
+						</p>
+					</div>
+				<!-- 列表结束 -->
+			</div>
+		</div>
+	</section>
+	
+	<!-- Scripts -->
+	<script src="__STATIC__/js/jquery.min.js"></script>
+	<script>
+	    $(function(){
+	        if(localStorage.getItem('lang')) {
+	        	$('.islang').find('.textlang').html(localStorage.getItem('lang'));
+	        }else {
+	        	$('.islang').find('.textlang').html('简体中文');
+	        }
+	        
+        });
+        //切换中英文
+		$('body').on('mouseover','.change-lang',function(){
+			$('.lang-list').show();
+		});
+		$('body').on('mouseleave','.change-lang',function(){
+			$('.lang-list').hide();
+		});
+         $('body').on('click','.lang-list dl dd',function(){
+            var that = this;
+			localStorage.setItem('lang',$(that).text());
+            var data={'lang':$(that).attr('lang')};
+            $.get("{:url('home/Index/lang')}",data,function () {
+                location.reload();
+            })
+        });
+	</script>
+</body>
+
+</html>

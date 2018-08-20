@@ -1,0 +1,159 @@
+{extend name="base/base" /}
+{block name="body"}
+<style>
+    .layui-form-label {
+        width: 160px;
+        padding: 9px 10px 9px 0;
+    }
+    .layui-input-block{
+        margin-left: 170px;
+    }
+</style>
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">系统配置</div>
+        <div class="layui-card-body">
+            <form class="layui-form">
+                <div class="layui-row">
+                    <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            {php}$keys =array_keys($configs);{/php}
+                            {foreach name="keys" item="key" key="k" }
+                            <li {eq name="k" value="0" }class="layui-this" {/eq}>{$key}</li>
+                            {/foreach}
+                        </ul>
+                        <div class="layui-tab-content">
+                            {foreach name="configs" item="vo" key="k" }
+                            <div class="layui-tab-item {eq name="k" value="站点配置" }layui-show{/eq}">
+                            <div class="layui-row">
+                                {foreach name="vo" item="config"}
+                                <div class="layui-col-md6">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">{$config.fieldName}</label>
+                                        <div class="layui-input-block">
+                                            {eq name="config.fieldType" value="1"}
+                                            <input type="text" name="{$config.fieldCode}"
+                                                   id="{$config.fieldCode}" placeholder="{$config.fieldName}"
+                                                   value="{$config.fieldValue}" autocomplete="off"
+                                                   class="layui-input">
+                                            {/eq}
+                                            {eq name="config.fieldType" value="2"}
+                                            {foreach name="config.optionValue" item="option" key="key"}
+                                            <input type="radio" name="{$config.fieldCode}" value="{$key}"
+                                                   title="{$option}" {if
+                                                   condition="$config['fieldValue'] eq $key" }checked{/if} >
+                                            {/foreach}
+                                            {/eq}
+                                            {eq name="config.fieldType" value="3"}
+                                            <select name="{$config.fieldCode}" id="{$config.fieldCode}">
+                                                {foreach name="config.optionValue" item="option" key="key"}
+                                                <option value="{$key}" {if
+                                                        condition="$config['fieldValue'] eq $key" }selected{
+                                                /if}>{$option}</option>
+                                                {/foreach}
+                                            </select>
+                                            {/eq}
+                                            {eq name="config.fieldType" value="4"}
+                                            <div class="code-file-box clearfix">
+                                                <div class="fl">
+                                                    <img {notempty name="config.fieldValue"
+                                                         }src="{$config['fieldValue']}" {/notempty}
+                                                    id="imgSrc_{$config.fieldCode}" width="100">
+                                                </div>
+                                                <div class="upload-code fl">
+                                                    <input type="hidden" name="{$config.fieldCode}"
+                                                           id="{$config.fieldCode}"
+                                                           value="{$config['fieldValue']}">
+                                                    <span class="layui-btn layui-btn-sm uploadImg"
+                                                          lay-data="{'fieldCode':'{$config.fieldCode}'}">上传{$config.fieldName}</span>
+                                                </div>
+                                            </div>
+                                            {/eq}
+                                        </div>
+                                    </div>
+                                </div>
+                                {/foreach}
+                            </div>
+                        </div>
+                        {/foreach}
+                    </div>
+                </div>
+                <div class="layui-row">
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use(['form', 'element', 'upload'], function () {
+        var form = layui.form, element = layui.element, upload = layui.upload;
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field);//当前容器的全部表单字段，名值对形式：{name: value}
+
+            $.post(SK.U('admin/Sysconfigs/edit'), data.field, function (res) {
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    window.location.href = SK.U('admin/sysconfigs/index');
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+        //上传图片
+        var uploadInst = upload.render({
+            elem: '.uploadImg', //绑定元素
+            url: '/admin/index/uploadPic', //上传接口
+            accept: {
+                extensions: 'gif,jpg,jpeg,png',
+                mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif'
+            },
+            auto:false,
+            data: {dir: 'sysconfigs'},
+            choose:function(obj){
+                var flag = true;
+                obj.preview(function(index, file, result){
+                    if(file.size < 5*1024*1024){
+                        obj.upload(index, file);
+                    }else{
+                        flag = false;
+                        layer.msg("您上传的图片大小不能超过5M！", {
+                            icon: 5,
+                            time: 2000
+                        });
+                        uploadInst.config.elem.next()[0].value = '';
+                        return false;
+                    }
+                    return flag;
+                });
+            },
+            before: function(obj){ //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                layer.load(1,{shade: [0.3, '#000000']}); //上传loading
+            },
+            done: function (json, index, upload) {
+                layer.msg(json.msg);
+                if (json.code == 0) {
+                    $("#imgSrc_" + this.fieldCode).attr('src', json.data.src);
+                    $("#" + this.fieldCode).val(json.data.src);
+                }
+                layer.closeAll('loading');
+            },
+            error: function () {
+                //请求异常回调
+                layer.closeAll('loading'); //关闭loading
+            }
+        });
+    });
+
+</script>
+
+{/block}

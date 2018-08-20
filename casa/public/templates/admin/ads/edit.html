@@ -1,0 +1,176 @@
+{extend name="base/base" /}
+{block name="body"}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-header">{if empty($object['adId'])}新增{else/}修改{/if}广告</div>
+        <div class="layui-card-body">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告名称</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="adName" id="adName" value="{$object.adName}"
+                                       lay-verify="required" placeholder="请填写广告名称" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告位</label>
+                            <div class="layui-input-block inputs">
+                                <select name="adPositionId" id="adPositionId" lay-verify="required" lay-filter="adPositionId">
+                                    <option value="">请选择广告位</option>
+                                    {volist name="adPositions" id="vo"}
+                                    <option value="{$vo.positionId}" {if condition="$object['adPositionId'] == $vo['positionId']" }selected{/if}>{$vo.positionName}</option>
+                                    {/volist}
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">广告图片</label>
+                            <div class="layui-input-block inputs">
+                                <div class="code-file-box clearfix">
+                                    <div class="fl">
+                                        <img {notempty name="object.adFile" }src="{$object['adFile']}" {/notempty}
+                                        id="imgSrc" width="100">
+                                    </div>
+                                    <div class="upload-code fl" style="margin-top:-27px;">
+                                        <input type="hidden" name="adFile" id="adFile" value="{$object['adFile']}">
+                                        <span class="layui-btn layui-btn-sm uploadImg">上传广告图片</span>
+                                        <div>建议宽度：<span id="adwidth">{$object['positionWidth']}</span>px，高度:<span id="adheight">{$object['positionHeight']}</span>px</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">跳转网址</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="adURL" id="adURL" value="{$object.adURL}" lay-verify="required"
+                                       placeholder="请填写跳转网址" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">开始时间</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="adStartDate" id="adStartDate" value="{$object.adStartDate}"
+                                       lay-verify="required" placeholder="开始时间" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">结束时间</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="adEndDate" id="adEndDate" value="{$object.adEndDate}"
+                                       lay-verify="required" placeholder="结束时间" autocomplete="off"
+                                       class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">排序</label>
+                            <div class="layui-input-block inputs">
+                                <input type="text" name="adSort" id="adSort" value="{$object.adSort}"
+                                       lay-verify="required" placeholder="请填写排序" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md4">
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <input type="hidden" name="adId" id="adId"
+                                       value="{if (isset($object.adId))}{$object.adId}{/if}"/>
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footer_js"}
+<script>
+    layui.use(['laydate','form', 'layer', 'upload'], function () {
+        var laydate = layui.laydate,form = layui.form, layer = layui.layer, upload = layui.upload;
+        laydate.render({elem: '#adStartDate'});
+        laydate.render({elem: '#adEndDate'});
+
+        /*监听select框*/
+        form.on('select(adPositionId)', function(data){
+            $.post(SK.U('admin/adpositions/get'),{id:data.value},function (res) {
+                $('#adwidth').text(res.positionWidth);
+                $('#adheight').text(res.positionHeight);
+            })
+
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            //console.log(data.field); //当前容器的全部表单字段，名值对形式：{name: value}
+            $.post(SK.U('admin/ads/' + ((data.field.adId > 0) ? "edit" : "add")), data.field, function (res) {
+                layer.msg(res.msg, {time: 2000});
+                if (res.status == 1) {
+                    setTimeout('parent.location.reload();', 2000);
+                }
+            }, 'json');
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        //上传图片
+        var uploadInst = upload.render({
+            elem: '.uploadImg', //绑定元素
+            url: '/admin/index/uploadPic', //上传接口
+            accept: {
+                extensions: 'gif,jpg,jpeg,png',
+                mimeTypes: 'image/jpg,image/jpeg,image/png,image/gif'
+            },
+            auto:false,
+            data: {dir: 'ads'},
+            choose:function(obj){
+                var flag = true;
+                obj.preview(function(index, file, result){
+                    if(file.size < 5*1024*1024){
+                        obj.upload(index, file);
+                    }else{
+                        flag = false;
+                        layer.msg("您上传的图片大小不能超过5M！", {
+                            icon: 5,
+                            time: 2000
+                        });
+                        uploadInst.config.elem.next()[0].value = '';
+                        return false;
+                    }
+                    return flag;
+                });
+            },
+            before: function(obj){ //obj参数包含的信息，跟 choose回调完全一致，可参见上文。
+                layer.load(1,{shade: [0.3, '#000000']}); //上传loading
+            },
+            done: function (json, index, upload) {
+                layer.closeAll('loading'); //关闭loading
+                layer.msg(json.msg);
+                if (json.code == 0) {
+                    $("#imgSrc").attr('src', json.data.src);
+                    $("#adFile").val(json.data.src);
+                }
+            },
+            error: function () {
+                //请求异常回调
+                layer.closeAll('loading'); //关闭loading
+            }
+        });
+    });
+</script>
+{/block}

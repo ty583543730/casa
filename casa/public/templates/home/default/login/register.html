@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="format-detection" content="telephone = no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <title>邀请注册</title>
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{:SysConfig('websiteLogo')}" sizes="16x16">
+	<!-- layui.css -->
+	<link rel="stylesheet" href="__STATIC__/plugins/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/home/moblie.css">
+	<script>
+        window.conf = {
+            "APP": "__APP__"
+        };
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="text-center moblie-logo"><img src="__STATIC__/images/home/moblie/logo_new.png"></div>
+		<div class="moblie-form-reg">
+			<form class="moblie-input-group layui-form">
+				<div class="moblie-input-row flex">
+					<select style="margin-right: 10px;" id="phoneArea" name="phoneArea">
+						{volist name="country" id="vo"}
+						<option value="{$vo.number}">{$vo.cnName}</option>
+						{/volist}
+					</select>
+					<span class="splite">|</span>
+					<input class="flex-1 ipt" type="tel" name="userPhone" id="userPhone" maxlength="11" lay-verify="tellphone" placeholder="请填写手机号码">
+				</div>
+				<div class="moblie-input-row flex">
+					<input type="text" class="flex-1 ipt" id="verifyCode" name="verifyCode" tabindex="4" autocomplete="off" maxlength="4" lay-verify="verify" placeholder="请填写右侧验证码">
+					<img class="verfity" id='verifyImg' src="{:url('home/index/getVerify')}" ontouchstart='javascript:SK.getVerify("#verifyImg")' />
+				</div> 
+				<div class="moblie-input-row flex">
+					<input type="text" class="flex-1 ipt" placeholder="请填写短信验证码" maxlength="6" autocomplete="off" tabindex="6" name="mobileCode" lay-verify="message">
+					<span class="btn-sm-blue sendTimeTrue" ontouchstart="javascript:phoneVerify('register');">点击获取</span>
+					<span id="timeTips" class="btn-sm-blue phoneCode sendDisabled" style="display: none;"></span>
+				</div>
+				{if !empty($userPhone.phone)}
+				<div class="moblie-input-row">
+					邀请人({$userPhone.phoneHide})
+				</div>
+				{/if}
+				<input type="hidden" id="invitePhone" name="invitePhone" value="{$userPhone.phone}">
+				<div class="moblie-input-row flex">
+					<input type="password" class="flex-1 ipt" id="loginPwd" name="loginPwd" placeholder="密码" lay-verify="pass">
+				</div> 
+				<div class="moblie-input-row flex">
+					<input type="password" class="flex-1 ipt" name="password_confirm" placeholder="再次输入密码" lay-verify="pass|regPwd">
+				</div> 
+				<div style="margin-top: 15px;">
+					<div class="ui-checkbox ui-checkbox isCheck" id="0">
+						<input type="text" class="chks" id="protocol" name="protocol" />
+						<label></label>
+					</div>
+					我已阅读<a class="color-blue" href="{:url('home/Login/protocol?id=19')}">《钱包注册服务协议》</a>
+				</div>
+				<div style="margin-top: 30px;">
+					<button class="btn-lg-blue" lay-submit="" lay-filter="reg">立即注册</button>
+				</div>
+			</form>
+		</div>
+		<!--<div class="down-load">
+			<div class="pull-left"><img src="__STATIC__/images/home/moblie/casa.png"></div>
+			<div class="pull-right"><a class="btn-sm-blue" href="javascript:;" style="margin-right: 24px;">立即下载</a></div>
+		</div>-->
+	</div>
+	<script src="__STATIC__/js/home/zepto.min.js"></script>
+	<script src="__STATIC__/plugins/layuiadmin/layui/layui.js"></script>
+	<script src="__STATIC__/js/common.js"></script>
+	<script src="__STATIC__/js/home/register.js"></script>
+</body>
+</html>
